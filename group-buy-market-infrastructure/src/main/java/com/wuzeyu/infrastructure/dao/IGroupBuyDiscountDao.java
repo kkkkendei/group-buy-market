@@ -2,7 +2,6 @@ package com.wuzeyu.infrastructure.dao;
 
 import com.wuzeyu.infrastructure.dao.po.GroupBuyDiscount;
 import org.apache.ibatis.annotations.Mapper;
-
 import java.util.List;
 
 /**
