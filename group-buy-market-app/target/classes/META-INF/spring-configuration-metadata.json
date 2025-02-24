@@ -1,0 +1,41 @@
+{
+  "groups": [
+    {
+      "name": "thread.pool.executor.config",
+      "type": "com.wuzeyu.config.ThreadPoolConfigProperties",
+      "sourceType": "com.wuzeyu.config.ThreadPoolConfigProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "thread.pool.executor.config.block-queue-size",
+      "type": "java.lang.Integer",
+      "description": "最大队列数",
+      "sourceType": "com.wuzeyu.config.ThreadPoolConfigProperties"
+    },
+    {
+      "name": "thread.pool.executor.config.core-pool-size",
+      "type": "java.lang.Integer",
+      "description": "核心线程数",
+      "sourceType": "com.wuzeyu.config.ThreadPoolConfigProperties"
+    },
+    {
+      "name": "thread.pool.executor.config.keep-alive-time",
+      "type": "java.lang.Long",
+      "description": "最大等待时间",
+      "sourceType": "com.wuzeyu.config.ThreadPoolConfigProperties"
+    },
+    {
+      "name": "thread.pool.executor.config.max-pool-size",
+      "type": "java.lang.Integer",
+      "description": "最大线程数",
+      "sourceType": "com.wuzeyu.config.ThreadPoolConfigProperties"
+    },
+    {
+      "name": "thread.pool.executor.config.policy",
+      "type": "java.lang.String",
+      "sourceType": "com.wuzeyu.config.ThreadPoolConfigProperties"
+    }
+  ],
+  "hints": []
+}

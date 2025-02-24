@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuzeyu.infrastructure.dao.IGroupBuyDiscountDao">
+
+    <resultMap id="dataMap" type="com.wuzeyu.infrastructure.dao.po.GroupBuyDiscount">
+        <id column="id" property="id"/>
+        <result column="discount_id" property="discountId"/>
+        <result column="discount_name" property="discountName"/>
+        <result column="discount_desc" property="discountDesc"/>
+        <result column="discount_type" property="discountType"/>
+        <result column="market_plan" property="marketPlan"/>
+        <result column="market_expr" property="marketExpr"/>
+        <result column="tag_id" property="tagId"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <select id="queryGroupBuyDiscountList" resultMap="dataMap">
+        select * from group_buy_discount
+    </select>
+
+    <select id="queryGroupBuyActivityDiscountByDiscountId" parameterType="java.lang.String" resultMap="dataMap">
+        select discount_id, discount_name, discount_desc, discount_type, market_plan, market_expr, tag_id
+        from group_buy_discount
+        where discount_id = #{discountId}
+    </select>
+
+</mapper>

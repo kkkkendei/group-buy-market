@@ -13,7 +13,7 @@ public class ApiTest {
 
     @Test
     public void test() {
-        log.info("测试完成");
+        //log.info("测试完成");
     }
 
 }

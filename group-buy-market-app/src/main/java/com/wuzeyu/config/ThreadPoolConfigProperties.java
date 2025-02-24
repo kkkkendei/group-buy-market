@@ -23,4 +23,43 @@ public class ThreadPoolConfigProperties {
      * */
     private String policy = "AbortPolicy";
 
+    public Integer getCorePoolSize() {
+        return corePoolSize;
+    }
+
+    public void setCorePoolSize(Integer corePoolSize) {
+        this.corePoolSize = corePoolSize;
+    }
+
+    public Integer getMaxPoolSize() {
+        return maxPoolSize;
+    }
+
+    public void setMaxPoolSize(Integer maxPoolSize) {
+        this.maxPoolSize = maxPoolSize;
+    }
+
+    public Long getKeepAliveTime() {
+        return keepAliveTime;
+    }
+
+    public void setKeepAliveTime(Long keepAliveTime) {
+        this.keepAliveTime = keepAliveTime;
+    }
+
+    public Integer getBlockQueueSize() {
+        return blockQueueSize;
+    }
+
+    public void setBlockQueueSize(Integer blockQueueSize) {
+        this.blockQueueSize = blockQueueSize;
+    }
+
+    public String getPolicy() {
+        return policy;
+    }
+
+    public void setPolicy(String policy) {
+        this.policy = policy;
+    }
 }

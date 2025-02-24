@@ -13,6 +13,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.wuzeyu</groupId>
+            <artifactId>group-buy-market-infrastructure</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>

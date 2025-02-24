@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/group-buy-market-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/group-buy-market-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/group-buy-market-app/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/group-buy-market-app/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/group-buy-market-domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/group-buy-market-domain/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/group-buy-market-infrastructure/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/group-buy-market-infrastructure/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/group-buy-market-trigger/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/group-buy-market-trigger/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/group-buy-market-types/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/group-buy-market-types/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
