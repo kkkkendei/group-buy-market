@@ -100,6 +100,12 @@ public class ActivityRepository implements IActivityRepository {
 
         SCSkuActivity scSkuActivity = skuActivityDao.querySCSkuActivityBySCGoodsId(scSkuActivityReq);
 
+        return SCSkuActivityVO.builder()
+                .source(scSkuActivity.getSource())
+                .channel(scSkuActivity.getChannel())
+                .activityId(scSkuActivity.getActivityId())
+                .goodsId(scSkuActivity.getGoodsId())
+                .build();
     }
 
     @Override

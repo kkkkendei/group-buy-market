@@ -1,5 +1,6 @@
 package com.wuzeyu.domain.activity.service.trial;
 
+import com.wuzeyu.domain.activity.adapter.repository.IActivityRepository;
 import com.wuzeyu.domain.activity.service.trial.factory.DefaultActivityStrategyFactory;
 import com.wuzeyu.types.design.framework.tree.AbstractMultiThreadStrategyRouter;
 
@@ -16,6 +17,8 @@ public abstract class AbstractGroupBuyMarketSupport<MarketProductEntity, Dynamic
 
     protected long timeout = 500;
 
+    @Resource
+    protected IActivityRepository repository;
 
     @Override
     protected void multiThread(com.wuzeyu.domain.activity.model.entity.MarketProductEntity requestParameter, DefaultActivityStrategyFactory.DynamicContext dynamicContext) throws ExecutionException, InterruptedException, TimeoutException {
