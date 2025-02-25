@@ -2,11 +2,11 @@ package com.wuzeyu.infrastructure.adapter.repository;
 
 import com.wuzeyu.domain.activity.adapter.repository.IActivityRepository;
 import com.wuzeyu.domain.activity.model.entity.UserGroupBuyOrderDetailEntity;
-import com.wuzeyu.domain.activity.model.valobj.GroupBuyActivityDiscountVO;
-import com.wuzeyu.domain.activity.model.valobj.SCSkuActivityVO;
-import com.wuzeyu.domain.activity.model.valobj.SkuVO;
-import com.wuzeyu.domain.activity.model.valobj.TeamStatisticVO;
+import com.wuzeyu.domain.activity.model.valobj.*;
 import com.wuzeyu.infrastructure.dao.*;
+import com.wuzeyu.infrastructure.dao.po.GroupBuyActivity;
+import com.wuzeyu.infrastructure.dao.po.GroupBuyDiscount;
+import com.wuzeyu.infrastructure.dao.po.Sku;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
@@ -41,12 +41,52 @@ public class ActivityRepository implements IActivityRepository {
 
     @Override
     public GroupBuyActivityDiscountVO queryGroupBuyActivityDiscountVO(Long activityId) {
-        return null;
+
+        GroupBuyActivity groupBuyActivityRes = groupBuyActivityDao.queryValidGroupBuyActivityId(activityId);
+        if (groupBuyActivityRes == null) return null;
+
+        String discountId = groupBuyActivityRes.getDiscountId();
+        GroupBuyDiscount groupBuyDiscountRes = groupBuyDiscountDao.queryGroupBuyActivityDiscountByDiscountId(discountId);
+        if (groupBuyDiscountRes == null) return null;
+
+        GroupBuyActivityDiscountVO.GroupBuyDiscount groupBuyDiscount = GroupBuyActivityDiscountVO.GroupBuyDiscount.builder()
+                .discountName(groupBuyDiscountRes.getDiscountName())
+                .discountDesc(groupBuyDiscountRes.getDiscountDesc())
+                .discountType(DiscountTypeEnum.get(groupBuyDiscountRes.getDiscountType()))
+                .marketPlan(groupBuyDiscountRes.getMarketPlan())
+                .marketExpr(groupBuyDiscountRes.getMarketExpr())
+                .tagId(groupBuyDiscountRes.getTagId())
+                .build();
+
+        return GroupBuyActivityDiscountVO.builder()
+                .activityId(groupBuyActivityRes.getActivityId())
+                .activityName(groupBuyActivityRes.getActivityName())
+                .groupBuyDiscount(groupBuyDiscount)
+                .groupType(groupBuyActivityRes.getGroupType())
+                .takeLimitCount(groupBuyActivityRes.getTakeLimitCount())
+                .target(groupBuyActivityRes.getTarget())
+                .validTime(groupBuyActivityRes.getValidTime())
+                .status(groupBuyActivityRes.getStatus())
+                .startTime(groupBuyActivityRes.getStartTime())
+                .endTime(groupBuyActivityRes.getEndTime())
+                .tagId(groupBuyActivityRes.getTagId())
+                .tagScope(groupBuyActivityRes.getTagScope())
+                .build();
+
     }
 
     @Override
     public SkuVO querySkuByGoodsId(String goodsId) {
-        return null;
+
+        Sku sku = skuDao.querySkuByGoodsId(goodsId);
+        if (sku == null) return null;
+
+        return SkuVO.builder()
+                .goodsId(sku.getGoodsId())
+                .goodsName(sku.getGoodsName())
+                .originalPrice(sku.getOriginalPrice())
+                .build();
+
     }
 
     @Override
