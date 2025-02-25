@@ -6,6 +6,7 @@ import com.wuzeyu.domain.activity.model.valobj.*;
 import com.wuzeyu.infrastructure.dao.*;
 import com.wuzeyu.infrastructure.dao.po.GroupBuyActivity;
 import com.wuzeyu.infrastructure.dao.po.GroupBuyDiscount;
+import com.wuzeyu.infrastructure.dao.po.SCSkuActivity;
 import com.wuzeyu.infrastructure.dao.po.Sku;
 import org.springframework.stereotype.Repository;
 
@@ -31,7 +32,7 @@ public class ActivityRepository implements IActivityRepository {
     private ISkuDao skuDao;
 
     @Resource
-    private ISCSkuActivityDao scSkuActivityDao;
+    private ISCSkuActivityDao skuActivityDao;
 
     @Resource
     private IGroupBuyOrderDao groupBuyOrderDao;
@@ -91,7 +92,14 @@ public class ActivityRepository implements IActivityRepository {
 
     @Override
     public SCSkuActivityVO querySCSkuActivityBySCGoodsId(String source, String channel, String goodsId) {
-        return null;
+
+        SCSkuActivity scSkuActivityReq = new SCSkuActivity();
+        scSkuActivityReq.setSource(source);
+        scSkuActivityReq.setChannel(channel);
+        scSkuActivityReq.setGoodsId(goodsId);
+
+        SCSkuActivity scSkuActivity = skuActivityDao.querySCSkuActivityBySCGoodsId(scSkuActivityReq);
+
     }
 
     @Override
