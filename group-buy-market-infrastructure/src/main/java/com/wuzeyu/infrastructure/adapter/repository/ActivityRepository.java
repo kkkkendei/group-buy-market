@@ -8,6 +8,7 @@ import com.wuzeyu.infrastructure.dao.po.GroupBuyActivity;
 import com.wuzeyu.infrastructure.dao.po.GroupBuyDiscount;
 import com.wuzeyu.infrastructure.dao.po.SCSkuActivity;
 import com.wuzeyu.infrastructure.dao.po.Sku;
+import org.redisson.api.RBitSet;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
@@ -110,7 +111,9 @@ public class ActivityRepository implements IActivityRepository {
 
     @Override
     public boolean isTagCrowdRange(String tagId, String userId) {
+
         return false;
+
     }
 
     @Override

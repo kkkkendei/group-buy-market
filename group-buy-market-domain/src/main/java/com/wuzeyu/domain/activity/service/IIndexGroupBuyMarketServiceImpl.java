@@ -10,7 +10,7 @@ import javax.annotation.Resource;
 
 /**
  * @author wuzeyu
- * @description
+ * @description 首页营销服务
  * @github github.com/kkkkendei
  */
 @Service

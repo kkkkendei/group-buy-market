@@ -5,7 +5,7 @@ import com.wuzeyu.domain.activity.model.entity.TrialBalanceEntity;
 
 /**
  * @author wuzeyu
- * @description
+ * @description 首页营销服务接口
  * @github github.com/kkkkendei
  */
 public interface IIndexGroupBuyMarketService {

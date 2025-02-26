@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 
 /**
  * @author wuzeyu
- * @description
+ * @description 活动策略工厂
  * @github github.com/kkkkendei
  */
 @Service

@@ -23,6 +23,11 @@
             <groupId>com.wuzeyu</groupId>
             <artifactId>group-buy-market-domain</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.26.0</version>
+        </dependency>
     </dependencies>
 
     <build>
