@@ -1,4 +1,4 @@
-package com.wuzeyu.test;
+package com.wuzeyu.test.infrastructure.dao;
 
 import com.alibaba.fastjson2.JSON;
 import com.wuzeyu.infrastructure.dao.IGroupBuyActivityDao;
@@ -12,7 +12,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

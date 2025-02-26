@@ -1,4 +1,4 @@
-package com.wuzeyu.test;
+package com.wuzeyu.test.infrastructure.dao;
 
 import com.alibaba.fastjson2.JSON;
 import com.wuzeyu.infrastructure.dao.IGroupBuyDiscountDao;

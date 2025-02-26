@@ -1,4 +1,15 @@
+25-02-24.11:13:40.837 [main            ] INFO  GroupBuyActivityDaoTest - Starting GroupBuyActivityDaoTest using Java 18.0.2 on wzy with PID 9840 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-02-24.11:13:40.837 [main            ] INFO  GroupBuyActivityDaoTest - The following 1 profile is active: "dev"
+25-02-24.11:13:42.224 [main            ] INFO  GroupBuyActivityDaoTest - Started GroupBuyActivityDaoTest in 1.714 seconds (JVM running for 2.374)
+25-02-24.11:15:30.111 [main            ] INFO  GroupBuyActivityDaoTest - Starting GroupBuyActivityDaoTest using Java 18.0.2 on wzy with PID 18388 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-02-24.11:15:30.112 [main            ] INFO  GroupBuyActivityDaoTest - The following 1 profile is active: "dev"
+25-02-24.11:15:31.525 [main            ] INFO  GroupBuyActivityDaoTest - Started GroupBuyActivityDaoTest in 1.746 seconds (JVM running for 2.325)
+25-02-24.12:41:58.586 [main            ] INFO  GroupBuyActivityDaoTest - Starting GroupBuyActivityDaoTest using Java 18.0.2 on wzy with PID 30896 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-02-24.12:41:58.587 [main            ] INFO  GroupBuyActivityDaoTest - The following 1 profile is active: "dev"
 25-02-24.12:41:59.837 [main            ] WARN  GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\吴泽宇\group-buy-market\group-buy-market-app\target\classes\mybatis\mapper\frame_case_mapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\吴泽宇\group-buy-market\group-buy-market-app\target\classes\mybatis\mapper\frame_case_mapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.wuzeyu.infrastructure.persistent.po.A'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.wuzeyu.infrastructure.persistent.po.A
+25-02-24.12:41:59.843 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 25-02-24.12:41:59.859 [main            ] ERROR SpringApplication      - Application run failed
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\吴泽宇\group-buy-market\group-buy-market-app\target\classes\mybatis\mapper\frame_case_mapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\吴泽宇\group-buy-market\group-buy-market-app\target\classes\mybatis\mapper\frame_case_mapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.wuzeyu.infrastructure.persistent.po.A'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.wuzeyu.infrastructure.persistent.po.A
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
@@ -180,7 +191,28 @@ Caused by: java.lang.ClassNotFoundException: Cannot find class: com.wuzeyu.infra
 	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
 	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
 	... 65 common frames omitted
+25-02-24.12:42:54.233 [main            ] INFO  GroupBuyActivityDaoTest - Starting GroupBuyActivityDaoTest using Java 18.0.2 on wzy with PID 29012 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-02-24.12:42:54.234 [main            ] INFO  GroupBuyActivityDaoTest - The following 1 profile is active: "dev"
+25-02-24.12:42:55.637 [main            ] INFO  GroupBuyActivityDaoTest - Started GroupBuyActivityDaoTest in 1.723 seconds (JVM running for 2.261)
+25-02-24.12:42:55.995 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-02-24.12:42:56.424 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-02-24.12:42:56.561 [main            ] INFO  GroupBuyActivityDaoTest - 测试结果：[{"activityId":100123,"createTime":"2024-12-07 18:19:40","discountId":"25120207","endTime":"2024-12-07 18:19:40","groupType":0,"id":1,"startTime":"2024-12-07 18:19:40","status":0,"tagId":"1","tagScope":"1","takeLimitCount":1,"target":1,"updateTime":"2024-12-07 18:19:40","validTime":15}]
+25-02-24.12:42:56.569 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-02-24.12:42:56.725 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-02-24.12:43:36.993 [main            ] INFO  GroupBuyDiscountDaoTest - Starting GroupBuyDiscountDaoTest using Java 18.0.2 on wzy with PID 30784 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-02-24.12:43:36.994 [main            ] INFO  GroupBuyDiscountDaoTest - The following 1 profile is active: "dev"
+25-02-24.12:43:38.417 [main            ] INFO  GroupBuyDiscountDaoTest - Started GroupBuyDiscountDaoTest in 1.747 seconds (JVM running for 2.308)
+25-02-24.12:43:38.771 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-02-24.12:43:39.164 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-02-24.12:43:39.307 [main            ] INFO  GroupBuyDiscountDaoTest - 测试结果[{"createTime":"2024-12-07 18:20:15","discountDesc":"测试优惠","discountId":9890001,"discountName":"测试优惠","discountType":0,"id":1,"marketExpr":"20","marketPlan":"ZJ","updateTime":"2024-12-07 18:20:15"}]
+25-02-24.12:43:39.315 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-02-24.12:43:39.412 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-02-25.22:08:27.000 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 18.0.2 on wzy with PID 33180 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-02-25.22:08:27.001 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
 25-02-25.22:08:28.127 [main            ] WARN  GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'marketNode': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.wuzeyu.domain.activity.service.trial.node.TagNode' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup="", name="", description="", authenticationType=CONTAINER, type=java.lang.Object.class, mappedName="")}
+25-02-25.22:08:28.137 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 25-02-25.22:08:28.156 [main            ] ERROR LoggingFailureAnalysisReporter - 
 
 ***************************
@@ -256,6 +288,9 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
 	... 43 common frames omitted
+25-02-25.22:09:48.862 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 18.0.2 on wzy with PID 19080 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-02-25.22:09:48.863 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
+25-02-25.22:09:50.595 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 2.072 seconds (JVM running for 2.676)
 25-02-25.22:09:50.637 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7d0b7e3c] to prepare test instance [com.wuzeyu.test.domain.activity.IIndexGroupBuyMarketServiceTest@280fafd]
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.wuzeyu.test.domain.activity.IIndexGroupBuyMarketServiceTest': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.wuzeyu.domain.activity.service.IIndexGroupBuyMarketService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup="", name="", description="", authenticationType=CONTAINER, type=java.lang.Object.class, mappedName="")}
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
@@ -299,3 +334,33 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
 	... 29 common frames omitted
+25-02-25.22:10:34.736 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 18.0.2 on wzy with PID 34428 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-02-25.22:10:34.736 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
+25-02-25.22:10:36.390 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 2.022 seconds (JVM running for 2.615)
+25-02-25.22:10:36.906 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-02-25.22:10:36.918 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 请求参数:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-02-25.22:10:36.918 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 返回结果:null
+25-02-25.22:10:59.031 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 18.0.2 on wzy with PID 10916 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-02-25.22:10:59.031 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
+25-02-25.22:11:00.723 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 2.029 seconds (JVM running for 2.659)
+25-02-25.22:11:01.179 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:dacihua requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"dacihua"}
+25-02-25.22:11:01.187 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 请求参数:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"dacihua"}
+25-02-25.22:11:01.187 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 返回结果:null
+25-02-25.22:11:09.852 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 18.0.2 on wzy with PID 34796 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-02-25.22:11:09.853 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
+25-02-25.22:11:11.553 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 2.041 seconds (JVM running for 2.692)
+25-02-25.22:11:11.984 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890002","source":"s01","userId":"xiaofuge"}
+25-02-25.22:11:11.992 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 请求参数:{"channel":"c01","goodsId":"9890002","source":"s01","userId":"xiaofuge"}
+25-02-25.22:11:11.992 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 返回结果:null
+25-02-25.22:13:07.016 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 18.0.2 on wzy with PID 24536 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-02-25.22:13:07.017 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
+25-02-25.22:13:08.731 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 2.043 seconds (JVM running for 2.624)
+25-02-25.22:13:09.237 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-02-25.22:13:09.246 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 请求参数:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-02-25.22:13:09.246 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 返回结果:null
+25-02-25.22:14:14.387 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 18.0.2 on wzy with PID 2108 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-02-25.22:14:14.388 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
+25-02-25.22:14:16.080 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 2.037 seconds (JVM running for 2.642)
+25-02-25.22:14:16.531 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-02-25.22:14:16.540 [main            ] INFO  SwitchNode             - 拼团商品查询试算服务-SwitchNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-02-25.22:14:16.546 [main            ] INFO  SwitchNode             - 拼团活动切量拦截 xiaofuge

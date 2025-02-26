@@ -4,6 +4,7 @@ import com.wuzeyu.domain.activity.model.entity.MarketProductEntity;
 import com.wuzeyu.domain.activity.model.entity.TrialBalanceEntity;
 import com.wuzeyu.domain.activity.service.trial.factory.DefaultActivityStrategyFactory;
 import com.wuzeyu.types.design.framework.tree.StrategyHandler;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
@@ -12,6 +13,7 @@ import javax.annotation.Resource;
  * @description
  * @github github.com/kkkkendei
  */
+@Service
 public class IIndexGroupBuyMarketServiceImpl implements IIndexGroupBuyMarketService {
 
     @Resource

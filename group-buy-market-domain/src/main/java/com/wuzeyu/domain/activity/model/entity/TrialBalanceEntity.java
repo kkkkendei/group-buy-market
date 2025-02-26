@@ -1,5 +1,6 @@
 package com.wuzeyu.domain.activity.model.entity;
 
+import com.wuzeyu.domain.activity.model.valobj.GroupBuyActivityDiscountVO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -31,6 +32,9 @@ public class TrialBalanceEntity {
     /** 折扣价格 */
     private BigDecimal deductionPrice;
 
+    /** 支付金额 */
+    private BigDecimal payPrice;
+
     /** 拼团目标数量 */
     private Integer targetCount;
 
@@ -46,75 +50,7 @@ public class TrialBalanceEntity {
     /** 是否可参与进团 */
     private Boolean isEnable;
 
-    public String getGoodsId() {
-        return goodsId;
-    }
+    /** 活动配置信息 */
+    private GroupBuyActivityDiscountVO groupBuyActivityDiscountVO;
 
-    public void setGoodsId(String goodsId) {
-        this.goodsId = goodsId;
-    }
-
-    public String getGoodsName() {
-        return goodsName;
-    }
-
-    public void setGoodsName(String goodsName) {
-        this.goodsName = goodsName;
-    }
-
-    public BigDecimal getOriginalPrice() {
-        return originalPrice;
-    }
-
-    public void setOriginalPrice(BigDecimal originalPrice) {
-        this.originalPrice = originalPrice;
-    }
-
-    public BigDecimal getDeductionPrice() {
-        return deductionPrice;
-    }
-
-    public void setDeductionPrice(BigDecimal deductionPrice) {
-        this.deductionPrice = deductionPrice;
-    }
-
-    public Integer getTargetCount() {
-        return targetCount;
-    }
-
-    public void setTargetCount(Integer targetCount) {
-        this.targetCount = targetCount;
-    }
-
-    public Date getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
-    }
-
-    public Date getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
-    }
-
-    public Boolean getVisible() {
-        return isVisible;
-    }
-
-    public void setVisible(Boolean visible) {
-        isVisible = visible;
-    }
-
-    public Boolean getEnable() {
-        return isEnable;
-    }
-
-    public void setEnable(Boolean enable) {
-        isEnable = enable;
-    }
 }
