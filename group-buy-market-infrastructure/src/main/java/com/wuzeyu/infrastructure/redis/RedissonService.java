@@ -33,156 +33,163 @@ public class RedissonService implements IRedisService {
 
     @Override
     public <T> T getValue(String key) {
-        return null;
+        return redissonClient.<T>getBucket(key).get();
     }
 
     @Override
     public <T> RQueue<T> getQueue(String key) {
-        return null;
+        return redissonClient.getQueue(key);
     }
 
     @Override
     public <T> RBlockingQueue<T> getBlockingQueue(String key) {
-        return null;
+        return redissonClient.getBlockingQueue(key);
     }
 
     @Override
     public <T> RDelayedQueue<T> getDelayedQueue(RBlockingQueue<T> rBlockingQueue) {
-        return null;
+        return redissonClient.getDelayedQueue(rBlockingQueue);
     }
 
     @Override
     public void setAtomicLong(String key, long value) {
-
+        redissonClient.getAtomicLong(key).set(value);
     }
 
     @Override
     public Long getAtomicLong(String key) {
-        return null;
+        return redissonClient.getAtomicLong(key).get();
     }
 
     @Override
     public long incr(String key) {
-        return 0;
+        return redissonClient.getAtomicLong(key).incrementAndGet();
     }
 
     @Override
     public long incrBy(String key, long delta) {
-        return 0;
+        return redissonClient.getAtomicLong(key).incrementAndGet();
     }
 
     @Override
     public long decr(String key) {
-        return 0;
+        return redissonClient.getAtomicLong(key).decrementAndGet();
     }
 
     @Override
     public long decrBy(String key, long delta) {
-        return 0;
+        return redissonClient.getAtomicLong(key).addAndGet(-delta);
     }
 
     @Override
     public void remove(String key) {
-
+        redissonClient.getBucket(key).delete();
     }
 
     @Override
     public boolean isExists(String key) {
-        return false;
+        return redissonClient.getBucket(key).isExists();
     }
 
     @Override
     public void addToSet(String key, String value) {
-
+        RSet<String> set = redissonClient.getSet(key);
+        set.add(value);
     }
 
     @Override
     public boolean isSetMember(String key, String value) {
-        return false;
+        RSet<String> set = redissonClient.getSet(key);
+        return set.contains(value);
     }
 
     @Override
     public void addToList(String key, String value) {
-
+        RList<String> list = redissonClient.getList(key);
     }
 
     @Override
     public String getFromList(String key, int index) {
-        return null;
+        RList<String> list = redissonClient.getList(key);
+        return list.get(index);
     }
 
     @Override
     public <K, V> RMap<K, V> getMap(String key) {
-        return null;
+        return redissonClient.getMap(key);
     }
 
     @Override
     public void addToMap(String key, String field, String value) {
-
+        RMap<String, String> map = redissonClient.getMap(key);
+        map.put(field, value);
     }
 
     @Override
     public String getFromMap(String key, String field) {
-        return null;
+        RMap<String, String> map = redissonClient.getMap(key);
+        return map.get(field);
     }
 
     @Override
     public <K, V> V getFromMap(String key, K field) {
-        return null;
+        return redissonClient.<K, V>getMap(key).get(field);
     }
 
     @Override
     public void addToSortedSet(String key, String value) {
-
+        RSortedSet<String> sortedSet = redissonClient.getSortedSet(key);
+        sortedSet.add(value);
     }
 
     @Override
     public RLock getLock(String key) {
-        return null;
+        return redissonClient.getLock(key);
     }
 
     @Override
     public RLock getFairLock(String key) {
-        return null;
+        return redissonClient.getFairLock(key);
     }
 
     @Override
     public RReadWriteLock getReadWriteLock(String key) {
-        return null;
+        return redissonClient.getReadWriteLock(key);
     }
 
     @Override
     public RSemaphore getSemaphore(String key) {
-        return null;
+        return redissonClient.getSemaphore(key);
     }
 
     @Override
     public RPermitExpirableSemaphore getPermitExpirableSemaphore(String key) {
-        return null;
+        return redissonClient.getPermitExpirableSemaphore(key);
     }
 
     @Override
     public RCountDownLatch getCountDownLatch(String key) {
-        return null;
+        return redissonClient.getCountDownLatch(key);
     }
 
     @Override
     public <T> RBloomFilter<T> getBloomFilter(String key) {
-        return null;
+        return redissonClient.getBloomFilter(key);
     }
 
     @Override
     public Boolean setNx(String key) {
-        return null;
+        return redissonClient.getBucket(key).trySet("lock");
     }
 
     @Override
     public Boolean setNx(String key, long expired, TimeUnit timeUnit) {
-        return null;
+        return redissonClient.getBucket(key).trySet("lock", expired, timeUnit);
     }
 
     @Override
     public RBitSet getBitSet(String key) {
-        return null;
+        return redissonClient.getBitSet(key);
     }
+
 }
