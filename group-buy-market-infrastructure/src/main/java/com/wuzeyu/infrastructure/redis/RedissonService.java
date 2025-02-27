@@ -1,7 +1,7 @@
 package com.wuzeyu.infrastructure.redis;
 
-import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -18,7 +18,6 @@ public class RedissonService implements IRedisService {
 
     @Resource
     private RedissonClient redissonClient;
-
 
     @Override
     public <T> void setValue(String key, T value) {

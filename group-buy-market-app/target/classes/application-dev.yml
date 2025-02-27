@@ -29,6 +29,10 @@ spring:
     connection-timeout: 30000 #数据库连接超时时间,默认30秒，即30000
     connection-test-query: SELECT 1
   type: com.zaxxer.hikari.HikariDataSource
+  redis:
+    host: 47.122.26.159
+    port: 6379
+    password: 5185021
 
 # MyBatis 配置【如需使用记得打开】
 mybatis:
