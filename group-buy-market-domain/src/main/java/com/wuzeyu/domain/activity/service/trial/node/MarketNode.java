@@ -39,7 +39,7 @@ public class MarketNode extends AbstractGroupBuyMarketSupport<MarketProductEntit
     private ErrorNode errorNode;
 
     @Resource
-    private EndNode endNode;
+    private TagNode tagNode;
 
 
     @Override
@@ -99,6 +99,6 @@ public class MarketNode extends AbstractGroupBuyMarketSupport<MarketProductEntit
         // 不存在配置的拼团活动，走异常节点
         //if (dynamicContext.getGroupBuyActivityDiscountVO() == null) return errorNode;
 
-        return endNode;
+        return tagNode;
     }
 }
