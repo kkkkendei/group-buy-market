@@ -1,0 +1,30 @@
+25-03-01.15:43:30.653 [main            ] INFO  Application            - Starting Application using Java 18.0.2 on wzy with PID 17512 (C:\Users\吴泽宇\group-buy-market\group-buy-market-app\target\classes started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market)
+25-03-01.15:43:30.655 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-01.15:43:31.445 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-01.15:43:31.448 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-01.15:43:31.486 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+25-03-01.15:43:31.741 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.wuzeyu.config.RedisClientConfig$$EnhancerBySpringCGLIB$$edebd6b1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-01.15:43:32.037 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.wuzeyu.config.RedisClientConfigProperties' of type [com.wuzeyu.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-01.15:43:32.324 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-01.15:43:32.626 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-03-01.15:43:32.725 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-03-01.15:43:32.762 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-01.15:43:33.098 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-03-01.15:43:33.111 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-03-01.15:43:33.111 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-01.15:43:33.111 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-01.15:43:33.225 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-01.15:43:33.225 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2526 ms
+25-03-01.15:43:34.368 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-01.15:43:34.386 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-03-01.15:43:34.395 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-03-01.15:43:34.408 [main            ] INFO  Application            - Started Application in 4.271 seconds (JVM running for 4.633)
+25-03-01.15:44:53.612 [http-nio-8091-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-01.15:44:53.613 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-01.15:44:53.613 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 0 ms
+25-03-01.15:44:53.648 [http-nio-8091-exec-1] INFO  DCCController          - DCC 动态配置值变更 key: cutRange value: 0
+25-03-01.15:44:53.717 [redisson-3-7    ] INFO  DCCValueBeanFactory    - DCC 节点监听，动态设置值 group_buy_market_dcc_cutRange 0
+25-03-01.15:47:51.788 [http-nio-8091-exec-5] INFO  DCCController          - DCC 动态配置值变更 key: cutRange value: 100
+25-03-01.15:47:51.848 [redisson-3-8    ] INFO  DCCValueBeanFactory    - DCC 节点监听，动态设置值 group_buy_market_dcc_cutRange 100
+25-03-01.15:47:54.440 [http-nio-8091-exec-6] INFO  DCCController          - DCC 动态配置值变更 key: cutRange value: 100
+25-03-01.15:47:54.478 [redisson-3-9    ] INFO  DCCValueBeanFactory    - DCC 节点监听，动态设置值 group_buy_market_dcc_cutRange 100
