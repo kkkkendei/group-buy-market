@@ -2,19 +2,19 @@ package com.wuzeyu.infrastructure.adapter.repository;
 
 import com.wuzeyu.domain.trade.adapter.repository.ITradeRepository;
 import com.wuzeyu.domain.trade.model.aggregate.GroupBuyOrderAggregate;
-import com.wuzeyu.domain.trade.model.entity.MarketPayOrderEntity;
-import com.wuzeyu.domain.trade.model.entity.PayActivityEntity;
-import com.wuzeyu.domain.trade.model.entity.PayDiscountEntity;
-import com.wuzeyu.domain.trade.model.entity.UserEntity;
+import com.wuzeyu.domain.trade.model.entity.*;
 import com.wuzeyu.domain.trade.model.valobj.GroupBuyProgressVO;
 import com.wuzeyu.domain.trade.model.valobj.TradeOrderStatusEnumVO;
 import com.wuzeyu.infrastructure.dao.IGroupBuyActivityDao;
 import com.wuzeyu.infrastructure.dao.IGroupBuyOrderDao;
 import com.wuzeyu.infrastructure.dao.IGroupBuyOrderListDao;
+import com.wuzeyu.infrastructure.dao.po.GroupBuyActivity;
 import com.wuzeyu.infrastructure.dao.po.GroupBuyOrder;
 import com.wuzeyu.infrastructure.dao.po.GroupBuyOrderList;
 import com.wuzeyu.infrastructure.dcc.DCCService;
 import com.wuzeyu.types.common.Constants;
+import com.wuzeyu.types.enums.ActivityStatusEnumVO;
+import com.wuzeyu.types.enums.GroupBuyOrderEnumVO;
 import com.wuzeyu.types.enums.ResponseCode;
 import com.wuzeyu.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
@@ -23,7 +23,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.annotation.Resource;
 import java.util.Calendar;
 import java.util.Date;
@@ -149,6 +148,49 @@ public class TradeRepository implements ITradeRepository {
                 .completeCount(groupBuyOrder.getCompleteCount())
                 .targetCount(groupBuyOrder.getTargetCount())
                 .lockCount(groupBuyOrder.getLockCount())
+                .build();
+    }
+
+    @Override
+    public GroupBuyActivityEntity queryGroupBuyActivityEntityByActivityId(Long activityId) {
+        GroupBuyActivity groupBuyActivity = groupBuyActivityDao.queryGroupBuyActivityByActivityId(activityId);
+        return GroupBuyActivityEntity.builder()
+                .activityId(groupBuyActivity.getActivityId())
+                .activityName(groupBuyActivity.getActivityName())
+                .discountId(groupBuyActivity.getDiscountId())
+                .groupType(groupBuyActivity.getGroupType())
+                .takeLimitCount(groupBuyActivity.getTakeLimitCount())
+                .target(groupBuyActivity.getTarget())
+                .validTime(groupBuyActivity.getValidTime())
+                .status(ActivityStatusEnumVO.valueOf(groupBuyActivity.getStatus()))
+                .startTime(groupBuyActivity.getStartTime())
+                .endTime(groupBuyActivity.getEndTime())
+                .tagId(groupBuyActivity.getTagId())
+                .tagScope(groupBuyActivity.getTagScope())
+                .build();
+    }
+
+    @Override
+    public Integer queryOrderCountByActivityId(Long activityId, String userId) {
+        GroupBuyOrderList groupBuyOrderListReq = new GroupBuyOrderList();
+        groupBuyOrderListReq.setActivityId(activityId);
+        groupBuyOrderListReq.setUserId(userId);
+        return groupBuyOrderListDao.queryOrderCountByActivityId(groupBuyOrderListReq);
+    }
+
+    @Override
+    public GroupBuyTeamEntity queryGroupBuyTeamByTeamId(String teamId) {
+        GroupBuyOrder groupBuyOrder = groupBuyOrderDao.queryGroupBuyTeamByTeamId(teamId);
+        return GroupBuyTeamEntity.builder()
+                .teamId(groupBuyOrder.getTeamId())
+                .activityId(groupBuyOrder.getActivityId())
+                .targetCount(groupBuyOrder.getTargetCount())
+                .completeCount(groupBuyOrder.getCompleteCount())
+                .lockCount(groupBuyOrder.getLockCount())
+                .status(GroupBuyOrderEnumVO.valueOf(groupBuyOrder.getStatus()))
+                .validStartTime(groupBuyOrder.getValidStartTime())
+                .validEndTime(groupBuyOrder.getValidEndTime())
+                .notifyUrl(groupBuyOrder.getNotifyUrl())
                 .build();
     }
 }
