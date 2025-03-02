@@ -62,7 +62,7 @@ public class TradeRepository implements ITradeRepository {
                 .orderId(groupBuyOrderListRes.getOrderId())
                 .originalPrice(groupBuyOrderListRes.getOriginalPrice())
                 .deductionPrice(groupBuyOrderListRes.getDeductionPrice())
-                .payPrice(groupBuyOrderListRes.getPayPrice())
+//                .payPrice(groupBuyOrderListRes.getPayPrice())
                 .tradeOrderStatusEnumVO(TradeOrderStatusEnumVO.valueOf(groupBuyOrderListRes.getStatus()))
                 .build();
     }
@@ -74,9 +74,7 @@ public class TradeRepository implements ITradeRepository {
         UserEntity userEntity = groupBuyOrderAggregate.getUserEntity();
         PayActivityEntity payActivityEntity = groupBuyOrderAggregate.getPayActivityEntity();
         PayDiscountEntity payDiscountEntity = groupBuyOrderAggregate.getPayDiscountEntity();
-        Integer userTakeOrderCount = groupBuyOrderAggregate.getUserTakeOrderCount();
-
-        // 判断是否有团 - teamId 为空 - 新团
+        // 判断是否有团 - teamId 为空 - 新团、为不空 - 老团
         String teamId = payActivityEntity.getTeamId();
         if (StringUtils.isBlank(teamId)) {
             // 使用 RandomStringUtils.randomNumeric 替代公司里使用的雪花算法UUID
@@ -95,15 +93,14 @@ public class TradeRepository implements ITradeRepository {
                     .channel(payDiscountEntity.getChannel())
                     .originalPrice(payDiscountEntity.getOriginalPrice())
                     .deductionPrice(payDiscountEntity.getDeductionPrice())
-                    .payPrice(payDiscountEntity.getPayPrice())
+                    .payPrice(payDiscountEntity.getDeductionPrice().subtract(payDiscountEntity.getDeductionPrice()))
                     .targetCount(payActivityEntity.getTargetCount())
                     .completeCount(0)
                     .lockCount(1)
                     .validStartTime(currentDate)
                     .validEndTime(calendar.getTime())
-                    .notifyUrl(payDiscountEntity.getNotifyUrl())
+                    .notifyUrl("http://127.0.0.1:8091/api/v1/test/group_buy_notify")
                     .build();
-
             // 写入记录
             groupBuyOrderDao.insert(groupBuyOrder);
         } else {
@@ -113,7 +110,6 @@ public class TradeRepository implements ITradeRepository {
                 throw new AppException(ResponseCode.E0005);
             }
         }
-
         // 使用 RandomStringUtils.randomNumeric 替代公司里使用的雪花算法UUID
         String orderId = RandomStringUtils.randomNumeric(12);
         GroupBuyOrderList groupBuyOrderListReq = GroupBuyOrderList.builder()
@@ -126,13 +122,11 @@ public class TradeRepository implements ITradeRepository {
                 .goodsId(payDiscountEntity.getGoodsId())
                 .source(payDiscountEntity.getSource())
                 .channel(payDiscountEntity.getChannel())
-                .originalPrice(payDiscountEntity.getOriginalPrice())
+                .originalPrice(payDiscountEntity.getDeductionPrice())
                 .deductionPrice(payDiscountEntity.getDeductionPrice())
-                .payPrice(payDiscountEntity.getPayPrice())
                 .status(TradeOrderStatusEnumVO.CREATE.getCode())
                 .outTradeNo(payDiscountEntity.getOutTradeNo())
-                // 构建 bizId 唯一值；活动id_用户id_参与次数累加
-                .bizId(payActivityEntity.getActivityId() + Constants.UNDERLINE + userEntity.getUserId() + Constants.UNDERLINE + (userTakeOrderCount + 1))
+                .bizId(payActivityEntity.getActivityId() + Constants.UNDERLINE + userEntity.getUserId() + Constants.UNDERLINE)
                 .build();
         try {
             // 写入拼团记录
@@ -140,12 +134,9 @@ public class TradeRepository implements ITradeRepository {
         } catch (DuplicateKeyException e) {
             throw new AppException(ResponseCode.INDEX_EXCEPTION);
         }
-
         return MarketPayOrderEntity.builder()
                 .orderId(orderId)
-                .originalPrice(payDiscountEntity.getOriginalPrice())
                 .deductionPrice(payDiscountEntity.getDeductionPrice())
-                .payPrice(payDiscountEntity.getPayPrice())
                 .tradeOrderStatusEnumVO(TradeOrderStatusEnumVO.CREATE)
                 .build();
     }

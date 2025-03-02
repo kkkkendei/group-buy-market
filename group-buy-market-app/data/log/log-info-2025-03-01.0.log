@@ -1,0 +1,53 @@
+25-03-01.10:29:46.612 [main            ] INFO  ITagServiceTest        - Starting ITagServiceTest using Java 18.0.2 on wzy with PID 34228 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-03-01.10:29:46.612 [main            ] INFO  ITagServiceTest        - The following 1 profile is active: "dev"
+25-03-01.10:29:47.389 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-01.10:29:47.392 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-01.10:29:47.423 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+25-03-01.10:29:48.522 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-01.10:29:48.782 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-03-01.10:29:48.862 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-03-01.10:29:50.079 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-01.10:29:50.127 [main            ] INFO  ITagServiceTest        - Started ITagServiceTest in 3.863 seconds (JVM running for 4.574)
+25-03-01.10:29:50.502 [main            ] INFO  ITagServiceTest        - w 存在，预期结果为 true，测试结果:true
+25-03-01.10:29:50.512 [main            ] INFO  ITagServiceTest        - gudebai 不存在，预期结果为 false，测试结果:false
+25-03-01.15:47:35.157 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 18.0.2 on wzy with PID 16496 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-03-01.15:47:35.158 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
+25-03-01.15:47:35.823 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-01.15:47:35.825 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-01.15:47:35.848 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+25-03-01.15:47:36.094 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.wuzeyu.config.RedisClientConfig$$EnhancerBySpringCGLIB$$4a8feef3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-01.15:47:36.319 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.wuzeyu.config.RedisClientConfigProperties' of type [com.wuzeyu.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-01.15:47:36.605 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-01.15:47:36.868 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-03-01.15:47:36.938 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-03-01.15:47:36.973 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-01.15:47:38.574 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-01.15:47:38.617 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 3.789 seconds (JVM running for 4.419)
+25-03-01.15:47:39.100 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:w requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"w"}
+25-03-01.15:47:39.107 [main            ] INFO  SwitchNode             - 拼团商品查询试算服务-SwitchNode userId:w requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"w"}
+25-03-01.15:47:39.112 [main            ] INFO  SwitchNode             - 拼团活动切量拦截 w
+25-03-01.15:48:02.249 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 18.0.2 on wzy with PID 22468 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-03-01.15:48:02.249 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
+25-03-01.15:48:02.937 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-01.15:48:02.940 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-01.15:48:02.973 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+25-03-01.15:48:03.205 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.wuzeyu.config.RedisClientConfig$$EnhancerBySpringCGLIB$$4a8feef3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-01.15:48:03.423 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.wuzeyu.config.RedisClientConfigProperties' of type [com.wuzeyu.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-01.15:48:03.688 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-01.15:48:03.939 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-03-01.15:48:04.049 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-03-01.15:48:04.088 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-01.15:48:05.710 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-01.15:48:05.750 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 3.836 seconds (JVM running for 4.444)
+25-03-01.15:48:06.149 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:w requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"w"}
+25-03-01.15:48:06.155 [main            ] INFO  SwitchNode             - 拼团商品查询试算服务-SwitchNode userId:w requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"w"}
+25-03-01.15:48:06.176 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-01.15:48:06.622 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-01.15:48:06.710 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:w 异步线程加载数据「GroupBuyActivityDiscountVO、SkuVO」完成
+25-03-01.15:48:06.710 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:w requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"w"}
+25-03-01.15:48:06.710 [main            ] INFO  MJCalculateService     - 优惠策略折扣计算: 0
+25-03-01.15:48:06.748 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:w requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"w"}
+25-03-01.15:48:06.749 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 请求参数:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"w"}
+25-03-01.15:48:06.755 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 返回结果:{"deductionPrice":10.00,"endTime":1796638780000,"goodsId":"9890001","goodsName":"《手写MyBatis：渐进式源码实践》","isEnable":false,"isVisible":false,"originalPrice":100.00,"payPrice":90.00,"startTime":1733566780000,"targetCount":3}
+25-03-01.15:48:06.765 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-01.15:48:06.788 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
