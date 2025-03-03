@@ -9,9 +9,11 @@ import com.wuzeyu.domain.trade.model.valobj.TradeOrderStatusEnumVO;
 import com.wuzeyu.infrastructure.dao.IGroupBuyActivityDao;
 import com.wuzeyu.infrastructure.dao.IGroupBuyOrderDao;
 import com.wuzeyu.infrastructure.dao.IGroupBuyOrderListDao;
+import com.wuzeyu.infrastructure.dao.INotifyTaskDao;
 import com.wuzeyu.infrastructure.dao.po.GroupBuyActivity;
 import com.wuzeyu.infrastructure.dao.po.GroupBuyOrder;
 import com.wuzeyu.infrastructure.dao.po.GroupBuyOrderList;
+import com.wuzeyu.infrastructure.dao.po.NotifyTask;
 import com.wuzeyu.infrastructure.dcc.DCCService;
 import com.wuzeyu.types.common.Constants;
 import com.wuzeyu.types.enums.ActivityStatusEnumVO;
@@ -25,9 +27,7 @@ import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author wuzeyu
@@ -46,6 +46,9 @@ public class TradeRepository implements ITradeRepository {
 
     @Resource
     private IGroupBuyOrderListDao groupBuyOrderListDao;
+
+    @Resource
+    private INotifyTaskDao notifyTaskDao;
 
     @Resource
     private DCCService dccService;
@@ -96,7 +99,7 @@ public class TradeRepository implements ITradeRepository {
                     .channel(payDiscountEntity.getChannel())
                     .originalPrice(payDiscountEntity.getOriginalPrice())
                     .deductionPrice(payDiscountEntity.getDeductionPrice())
-                    .payPrice(payDiscountEntity.getDeductionPrice().subtract(payDiscountEntity.getDeductionPrice()))
+                    .payPrice(payDiscountEntity.getPayPrice())
                     .targetCount(payActivityEntity.getTargetCount())
                     .completeCount(0)
                     .lockCount(1)
@@ -125,7 +128,7 @@ public class TradeRepository implements ITradeRepository {
                 .goodsId(payDiscountEntity.getGoodsId())
                 .source(payDiscountEntity.getSource())
                 .channel(payDiscountEntity.getChannel())
-                .originalPrice(payDiscountEntity.getDeductionPrice())
+                .originalPrice(payDiscountEntity.getOriginalPrice())
                 .deductionPrice(payDiscountEntity.getDeductionPrice())
                 .status(TradeOrderStatusEnumVO.CREATE.getCode())
                 .outTradeNo(payDiscountEntity.getOutTradeNo())
@@ -205,32 +208,54 @@ public class TradeRepository implements ITradeRepository {
 
     @Override
     public boolean isSCBlackIntercept(String source, String channel) {
-        return false;
+        return dccService.isSCBlackIntercept(source, channel);
     }
 
     @Override
     public List<NotifyTaskEntity> queryUnExecutedNotifyTaskList() {
-        return null;
+        List<NotifyTask> notifyTaskList = notifyTaskDao.queryUnExecutedNotifyTaskList();
+        if (notifyTaskList.isEmpty()) return new ArrayList<>();
+
+        List<NotifyTaskEntity> notifyTaskEntities = new ArrayList<>();
+        for (NotifyTask notifyTask : notifyTaskList) {
+            NotifyTaskEntity notifyTaskEntity = NotifyTaskEntity.builder()
+                    .teamId(notifyTask.getTeamId())
+                    .notifyUrl(notifyTask.getNotifyUrl())
+                    .notifyCount(notifyTask.getNotifyCount())
+                    .parameterJson(notifyTask.getParameterJson())
+                    .build();
+
+            notifyTaskEntities.add(notifyTaskEntity);
+        }
+
+        return notifyTaskEntities;
     }
 
     @Override
     public List<NotifyTaskEntity> queryUnExecutedNotifyTaskList(String teamId) {
-        return null;
+        NotifyTask notifyTask = notifyTaskDao.queryUnExecutedNotifyTaskByTeamId(teamId);
+        if (notifyTask == null) return new ArrayList<>();
+        return Collections.singletonList(NotifyTaskEntity.builder()
+                .teamId(notifyTask.getTeamId())
+                .notifyUrl(notifyTask.getNotifyUrl())
+                .notifyCount(notifyTask.getNotifyCount())
+                .parameterJson(notifyTask.getParameterJson())
+                .build());
     }
 
     @Override
     public int updateNotifyTaskStatusSuccess(String teamId) {
-        return 0;
+        return notifyTaskDao.updateNotifyTaskStatusSuccess(teamId);
     }
 
     @Override
     public int updateNotifyTaskStatusError(String teamId) {
-        return 0;
+        return notifyTaskDao.updateNotifyTaskStatusError(teamId);
     }
 
     @Override
     public int updateNotifyTaskStatusRetry(String teamId) {
-        return 0;
+        return notifyTaskDao.updateNotifyTaskStatusRetry(teamId);
     }
 
 }

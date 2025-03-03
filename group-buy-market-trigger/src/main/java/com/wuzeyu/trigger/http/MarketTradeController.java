@@ -152,7 +152,7 @@ public class MarketTradeController implements IMarketTradeService {
                     .data(LockMarketPayOrderResponseDTO.builder()
                             .orderId(marketPayOrderEntity.getOrderId())
                             .originalPrice(marketPayOrderEntity.getOriginalPrice())
-                            .payPrice(marketPayOrderEntity.getPayPrice())
+                            .payPrice(trialBalanceEntity.getPayPrice())
                             .deductionPrice(marketPayOrderEntity.getDeductionPrice())
                             .tradeOrderStatus(marketPayOrderEntity.getTradeOrderStatusEnumVO().getCode())
                             .build())
