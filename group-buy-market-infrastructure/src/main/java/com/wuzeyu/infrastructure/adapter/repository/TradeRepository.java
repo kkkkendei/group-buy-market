@@ -2,6 +2,7 @@ package com.wuzeyu.infrastructure.adapter.repository;
 
 import com.wuzeyu.domain.trade.adapter.repository.ITradeRepository;
 import com.wuzeyu.domain.trade.model.aggregate.GroupBuyOrderAggregate;
+import com.wuzeyu.domain.trade.model.aggregate.GroupBuyTeamSettlementAggregate;
 import com.wuzeyu.domain.trade.model.entity.*;
 import com.wuzeyu.domain.trade.model.valobj.GroupBuyProgressVO;
 import com.wuzeyu.domain.trade.model.valobj.TradeOrderStatusEnumVO;
@@ -26,6 +27,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author wuzeyu
@@ -195,4 +197,40 @@ public class TradeRepository implements ITradeRepository {
                 .notifyUrl(groupBuyOrder.getNotifyUrl())
                 .build();
     }
+
+    @Override
+    public boolean settlementMarketPayOrder(GroupBuyTeamSettlementAggregate groupBuyTeamSettlementAggregate) {
+        return false;
+    }
+
+    @Override
+    public boolean isSCBlackIntercept(String source, String channel) {
+        return false;
+    }
+
+    @Override
+    public List<NotifyTaskEntity> queryUnExecutedNotifyTaskList() {
+        return null;
+    }
+
+    @Override
+    public List<NotifyTaskEntity> queryUnExecutedNotifyTaskList(String teamId) {
+        return null;
+    }
+
+    @Override
+    public int updateNotifyTaskStatusSuccess(String teamId) {
+        return 0;
+    }
+
+    @Override
+    public int updateNotifyTaskStatusError(String teamId) {
+        return 0;
+    }
+
+    @Override
+    public int updateNotifyTaskStatusRetry(String teamId) {
+        return 0;
+    }
+
 }
