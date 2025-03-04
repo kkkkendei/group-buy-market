@@ -84,8 +84,10 @@ public class TradeRepository implements ITradeRepository {
         // 判断是否有团 - teamId 为空 - 新团、为不空 - 老团
         String teamId = payActivityEntity.getTeamId();
         if (StringUtils.isBlank(teamId)) {
+
             // 使用 RandomStringUtils.randomNumeric 替代公司里使用的雪花算法UUID
             teamId = RandomStringUtils.randomNumeric(8);
+
             // 日期处理
             Date currentDate = new Date();
             Calendar calendar = Calendar.getInstance();
