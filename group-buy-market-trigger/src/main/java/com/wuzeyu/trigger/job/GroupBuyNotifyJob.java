@@ -30,5 +30,5 @@ public class GroupBuyNotifyJob {
             log.error("定时任务，回调通知拼团完结任务失败", e);
         }
     }
-    
+
 }
