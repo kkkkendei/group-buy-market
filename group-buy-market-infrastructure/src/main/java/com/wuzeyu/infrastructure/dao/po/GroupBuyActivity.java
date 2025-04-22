@@ -36,7 +36,7 @@ public class GroupBuyActivity {
     /** 拼团次数限制 */
     private Integer takeLimitCount;
 
-    /** 拼团目标 */
+    /** 拼团目标（人数） */
     private Integer target;
 
     /** 拼团时长（分钟） */
