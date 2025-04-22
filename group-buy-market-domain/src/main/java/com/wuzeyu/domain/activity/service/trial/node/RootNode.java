@@ -26,6 +26,13 @@ public class RootNode extends AbstractGroupBuyMarketSupport<MarketProductEntity,
     @Resource
     private SwitchNode switchNode;
 
+    /**
+     *
+     * @param requestParameter 营销商品实体信息
+     * @param dynamicContext
+     * @return
+     * @throws Exception
+     */
     @Override
     protected TrialBalanceEntity doApply(MarketProductEntity requestParameter, DefaultActivityStrategyFactory.DynamicContext dynamicContext) throws Exception {
         log.info("拼团商品查询试算服务-RootNode userId:{} requestParameter:{}", requestParameter.getUserId(), JSON.toJSONString(requestParameter));
