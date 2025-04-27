@@ -27,6 +27,7 @@ public class RootNode extends AbstractGroupBuyMarketSupport<MarketProductEntity,
     private SwitchNode switchNode;
 
     /**
+     * 参数校验
      *
      * @param requestParameter 营销商品实体信息
      * @param dynamicContext
