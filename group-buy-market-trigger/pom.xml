@@ -46,6 +46,11 @@
             <version>3.26.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-annotations-api</artifactId>
+            <version>9.0.75</version>
+        </dependency>
     </dependencies>
 
     <build>

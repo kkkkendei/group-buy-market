@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 
 /**
  * @author wuzeyu
- * @description 满减优惠计算
+ * @description N元购优惠计算
  * @github github.com/kkkkendei
  */
 @Slf4j

@@ -1,7 +1,6 @@
 package com.wuzeyu.domain.activity.service.discount;
 
 import com.wuzeyu.domain.activity.model.valobj.GroupBuyActivityDiscountVO;
-
 import java.math.BigDecimal;
 
 /**

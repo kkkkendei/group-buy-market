@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuzeyu.infrastructure.dao.IGroupBuyOrderListDao">
+
+    <resultMap id="dataMap" type="com.wuzeyu.infrastructure.dao.po.GroupBuyOrderList">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="team_id" property="teamId"/>
+        <result column="order_id" property="orderId"/>
+        <result column="activity_id" property="activityId"/>
+        <result column="start_time" property="startTime"/>
+        <result column="end_time" property="endTime"/>
+        <result column="goods_id" property="goodsId"/>
+        <result column="source" property="source"/>
+        <result column="channel" property="channel"/>
+        <result column="original_price" property="originalPrice"/>
+        <result column="deduction_price" property="deductionPrice"/>
+        <result column="status" property="status"/>
+        <result column="out_trade_no" property="outTradeNo"/>
+        <result column="out_trade_time" property="outTradeTime"/>
+        <result column="biz_id" property="bizId"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.wuzeyu.infrastructure.dao.po.GroupBuyOrderList">
+        insert into group_buy_order_list(
+        user_id, team_id, order_id, activity_id, start_time,
+        end_time, goods_id, source, channel, original_price,
+        deduction_price, status, out_trade_no, biz_id, create_time, update_time
+        )
+        values(
+        #{userId}, #{teamId}, #{orderId}, #{activityId}, #{startTime},
+        #{endTime}, #{goodsId}, #{source}, #{channel}, #{originalPrice},
+        #{deductionPrice}, #{status}, #{outTradeNo}, #{bizId}, now(), now()
+        )
+    </insert>
+
+    <select id="queryGroupBuyOrderRecordByOutTradeNo"
+            parameterType="com.wuzeyu.infrastructure.dao.po.GroupBuyOrderList" resultMap="dataMap">
+        select user_id, team_id, order_id, activity_id, start_time,
+        end_time, goods_id, source, channel, original_price, deduction_price, status
+        from group_buy_order_list
+        where out_trade_no = #{outTradeNo} and user_id = #{userId} and status = 0
+    </select>
+
+    <select id="queryOrderCountByActivityId" parameterType="com.wuzeyu.infrastructure.dao.po.GroupBuyOrderList"
+            resultType="java.lang.Integer">
+        select count(id) from group_buy_order_list
+        where user_id = #{userId} and activity_id = #{activityId}
+    </select>
+
+    <update id="updateOrderStatus2COMPLETE" parameterType="com.wuzeyu.infrastructure.dao.po.GroupBuyOrderList">
+        update group_buy_order_list
+        set status = 1, out_trade_time = #{outTradeTime}, update_time = now()
+        where out_trade_no = #{outTradeNo} and user_id = #{userId} and status = 0
+    </update>
+
+    <select id="queryGroupBuyCompleteOrderOutTradeNoListByTeamId" parameterType="java.lang.String"
+            resultType="java.lang.String">
+        select out_trade_no from group_buy_order_list where team_id = #{teamId} and status = 1
+    </select>
+
+    <select id="queryInProgressUserGroupBuyOrderDetailListByUserId"
+            parameterType="com.wuzeyu.infrastructure.dao.po.GroupBuyOrderList" resultMap="dataMap">
+        select user_id, team_id, out_trade_no
+        from group_buy_order_list
+        where activity_id = #{activityId} and user_id = #{userId} and status in (0, 1) and end_time > now()
+        order by id desc
+        limit #{count}
+    </select>
+
+    <select id="queryInProgressUserGroupBuyOrderDetailListByRandom"
+            parameterType="com.wuzeyu.infrastructure.dao.po.GroupBuyOrderList" resultMap="dataMap">
+        select user_id, team_id, out_trade_no
+        from group_buy_order_list
+        where
+        activity_id = #{activityId} and
+        team_id in (select team_id from group_buy_order where activity_id = #{activityId} and status = 0) and
+        user_id != #{userId} and
+        status in (0, 1)
+        and end_time > now()
+        order by id desc
+        limit #{count}
+    </select>
+
+    <select id="queryInProgressUserGroupBuyOrderDetailListByActivityId" parameterType="java.lang.Long"
+            resultMap="dataMap">
+        select user_id, team_id, out_trade_no
+        from group_buy_order_list
+        where activity_id = #{activityId} and status in (0, 1)
+        group by team_id
+    </select>
+
+</mapper>

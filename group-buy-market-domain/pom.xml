@@ -43,6 +43,11 @@
             <groupId>com.wuzeyu</groupId>
             <artifactId>group-buy-market-types</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-annotations-api</artifactId>
+            <version>9.0.75</version>
+        </dependency>
     </dependencies>
 
     <build>
