@@ -118,6 +118,7 @@ public class ActivityRepository implements IActivityRepository {
     @Override
     public boolean isTagCrowdRange(String tagId, String userId) {
         RBitSet bitSet = redisService.getBitSet(tagId);
+        // 如果人群标签数据丢失，默认允许所有用户访问
         if (!bitSet.isExists()) return true;
         // 判断用户是否存在人群中
         return bitSet.get(redisService.getIndexFromUserId(userId));

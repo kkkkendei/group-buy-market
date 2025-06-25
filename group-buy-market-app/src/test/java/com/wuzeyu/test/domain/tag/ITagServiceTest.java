@@ -1,6 +1,6 @@
 package com.wuzeyu.test.domain.tag;
 
-import com.wuzeyu.domain.tag.service.TagService;
+import com.wuzeyu.domain.tag.service.ITagService;
 import com.wuzeyu.infrastructure.redis.IRedisService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -22,7 +22,8 @@ import javax.annotation.Resource;
 public class ITagServiceTest {
 
     @Resource
-    private TagService tagService;
+    private ITagService tagService;
+
     @Resource
     private IRedisService redisService;
 

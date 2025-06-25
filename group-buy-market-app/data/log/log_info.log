@@ -1,0 +1,36 @@
+25-06-25.17:09:16.860 [main            ] INFO  ITagServiceTest        - Starting ITagServiceTest using Java 1.8.0_341 on wzy with PID 11688 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-06-25.17:09:16.861 [main            ] INFO  ITagServiceTest        - The following 1 profile is active: "dev"
+25-06-25.17:09:18.394 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-06-25.17:09:18.399 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-06-25.17:09:18.497 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72 ms. Found 0 Redis repository interfaces.
+25-06-25.17:09:19.128 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.wuzeyu.config.RedisClientConfig$$EnhancerBySpringCGLIB$$1739d320] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-06-25.17:09:19.736 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.wuzeyu.config.RedisClientConfigProperties' of type [com.wuzeyu.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-06-25.17:09:20.193 [main            ] INFO  Version                - Redisson 3.26.0
+25-06-25.17:09:21.065 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-06-25.17:09:21.222 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-06-25.17:09:21.300 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-06-25.17:09:25.392 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-06-25.17:09:25.485 [main            ] INFO  ITagServiceTest        - Started ITagServiceTest in 9.283 seconds (JVM running for 10.96)
+25-06-25.17:09:25.827 [main            ] INFO  TagService             - 人群标签批次任务 tagId: RQ_KJHKL98UU78H66554GFDV batchId: 10001
+25-06-25.17:09:25.866 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-06-25.17:09:26.446 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-06-25.17:09:26.785 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-06-25.17:09:26.841 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-06-25.22:12:27.543 [main            ] INFO  ITagServiceTest        - Starting ITagServiceTest using Java 1.8.0_341 on wzy with PID 3412 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-06-25.22:12:27.545 [main            ] INFO  ITagServiceTest        - The following 1 profile is active: "dev"
+25-06-25.22:12:28.836 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-06-25.22:12:28.840 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-06-25.22:12:28.919 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 59 ms. Found 0 Redis repository interfaces.
+25-06-25.22:12:29.486 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.wuzeyu.config.RedisClientConfig$$EnhancerBySpringCGLIB$$aab9ba4a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-06-25.22:12:30.056 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.wuzeyu.config.RedisClientConfigProperties' of type [com.wuzeyu.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-06-25.22:12:30.447 [main            ] INFO  Version                - Redisson 3.26.0
+25-06-25.22:12:31.331 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-06-25.22:12:31.458 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-06-25.22:12:31.531 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-06-25.22:12:35.314 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-06-25.22:12:35.386 [main            ] INFO  ITagServiceTest        - Started ITagServiceTest in 8.478 seconds (JVM running for 9.871)
+25-06-25.22:12:35.700 [main            ] INFO  TagService             - 人群标签批次任务 tagId: RQ_KJHKL98UU78H66554GFDV batchId: 10001
+25-06-25.22:12:35.727 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-06-25.22:12:36.242 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-06-25.22:12:36.486 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-06-25.22:12:36.578 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

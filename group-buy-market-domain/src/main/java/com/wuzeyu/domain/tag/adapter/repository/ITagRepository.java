@@ -1,4 +1,4 @@
-package com.wuzeyu.domain.tag.model.aggregate.repository;
+package com.wuzeyu.domain.tag.adapter.repository;
 
 import com.wuzeyu.domain.tag.model.entity.CrowdTagsJobEntity;
 

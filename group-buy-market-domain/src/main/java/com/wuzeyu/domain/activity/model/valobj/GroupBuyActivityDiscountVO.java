@@ -94,7 +94,7 @@ public class GroupBuyActivityDiscountVO {
     private String tagScope;
 
     /**
-     * 可见限制
+     * 可见限制(1:可见限制)
      * 只要存在这样一个值，那么首次获得的默认值就是false
      */
     public boolean isVisible() {
@@ -107,7 +107,7 @@ public class GroupBuyActivityDiscountVO {
     }
 
     /**
-     * 参与限制
+     * 参与限制(2:参与限制)
      * 只要存在这样一个值，那么首次获得的默认值就是false
      */
     public boolean isEnable() {

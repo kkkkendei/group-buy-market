@@ -1,6 +1,6 @@
 package com.wuzeyu.domain.tag.service;
 
-import com.wuzeyu.domain.tag.model.aggregate.repository.ITagRepository;
+import com.wuzeyu.domain.tag.adapter.repository.ITagRepository;
 import com.wuzeyu.domain.tag.model.entity.CrowdTagsJobEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -31,8 +31,8 @@ public class TagService implements ITagService {
 
         // 3. 数据写入记录
         List<String> userIdList = new ArrayList<>();
-        userIdList.add("w");
-        userIdList.add("z");
+        userIdList.add("test_wzy");
+        userIdList.add("test_zyt");
 
         // 4. 一般人群标签的处理在公司，会有专门的数据数仓团队通过脚本方式写入到数据库，就不用这样一个个或者批次来写。
         for (String userId : userIdList) {

@@ -13,5 +13,4 @@ public interface ICrowdTagsDao {
 
     void updateCrowdTagsStatistics(CrowdTags crowdTagsReq);
 
-
 }

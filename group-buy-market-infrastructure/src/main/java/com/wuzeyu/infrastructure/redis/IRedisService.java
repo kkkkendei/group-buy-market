@@ -282,7 +282,7 @@ public interface IRedisService {
             BigInteger bigInt = new BigInteger(1, hashBytes);
 
             // 取模以确保索引在合理范围内
-            return bigInt.mod(BigInteger.valueOf(Integer.MAX_VALUE)).intValue();
+            return bigInt.mod(BigInteger.valueOf(1_000_000)).intValue();
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("MD5 algorithm not found", e);
         }

@@ -1,6 +1,6 @@
 package com.wuzeyu.infrastructure.adapter.repository;
 
-import com.wuzeyu.domain.tag.model.aggregate.repository.ITagRepository;
+import com.wuzeyu.domain.tag.adapter.repository.ITagRepository;
 import com.wuzeyu.domain.tag.model.entity.CrowdTagsJobEntity;
 import com.wuzeyu.infrastructure.dao.ICrowdTagsDao;
 import com.wuzeyu.infrastructure.dao.ICrowdTagsDetailDao;
@@ -62,6 +62,7 @@ public class TagRepository implements ITagRepository {
             crowdTagsDetailDao.addCrowdTagsUserId(crowdTagsDetailReq);
 
             // 获取BitSet
+
             RBitSet bitSet = redisService.getBitSet(tagId);
             bitSet.set(redisService.getIndexFromUserId(userId), true);
         } catch (DuplicateKeyException ignore) {
