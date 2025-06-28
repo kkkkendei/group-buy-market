@@ -36,6 +36,13 @@ public class DCCValueBeanFactory implements BeanPostProcessor {
         this.redissonClient = redissonClient;
     }
 
+    /**
+     * 创建订阅者，订阅 Redis 频道“group_buy_market_dcc_”
+     * 监听配置变更消息
+     * 接受到消息时，会解析消息，更新 Redis 中的值，并使用反射更新对应的 Java 对象字段
+     * @param redissonClient
+     * @return RTopic
+     */
     @Bean("dccTopic")
     public RTopic dccRedisTopicListener(RedissonClient redissonClient) {
         RTopic topic = redissonClient.getTopic("group_buy_market_dcc_");
@@ -80,6 +87,15 @@ public class DCCValueBeanFactory implements BeanPostProcessor {
         return topic;
     }
 
+    /**
+     * 订阅者初始化
+     * 从 Redis 中读取配置值，不存在时设置默认值
+     * 将对象和配置键的映射关系存储到 dccObjGroup 中，为后续动态更新做准备
+     * @param bean
+     * @param beanName
+     * @return
+     * @throws BeansException
+     */
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         // 增加 AOP 代理后，获得类的方式要通过 AopProxyUtils.getTargetClass(bean); 不能直接 bean.class 因为代理后类的结构发生变化，这样不能获得到自己的自定义注解了。

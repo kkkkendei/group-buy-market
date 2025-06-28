@@ -36,7 +36,7 @@ public class ITagServiceTest {
     public void test_get_tag_bitmap() {
         RBitSet bitSet = redisService.getBitSet("RQ_KJHKL98UU78H66554GFDV");
         // 是否存在
-        log.info("w 存在，预期结果为 true，测试结果:{}", bitSet.get(redisService.getIndexFromUserId("w")));
+        log.info("w 存在，预期结果为 true，测试结果:{}", bitSet.get(redisService.getIndexFromUserId("test_wzy")));
         log.info("gudebai 不存在，预期结果为 false，测试结果:{}", bitSet.get(redisService.getIndexFromUserId("gudebai")));
     }
 
