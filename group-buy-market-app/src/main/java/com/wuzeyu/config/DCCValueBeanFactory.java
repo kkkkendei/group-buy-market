@@ -99,8 +99,8 @@ public class DCCValueBeanFactory implements BeanPostProcessor {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         // 增加 AOP 代理后，获得类的方式要通过 AopProxyUtils.getTargetClass(bean); 不能直接 bean.class 因为代理后类的结构发生变化，这样不能获得到自己的自定义注解了。
-        Class<?> targetBeanClass = bean.getClass();
-        Object targetBeanObject = bean;
+        Class<?> targetBeanClass = bean.getClass();  // 用于反射操作
+        Object targetBeanObject = bean;  // 用于字段值设置，作为反射操作的目标对象
         if (AopUtils.isAopProxy(bean)) {
             targetBeanClass = AopUtils.getTargetClass(bean);
             targetBeanObject = AopProxyUtils.getSingletonTarget(bean);

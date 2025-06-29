@@ -1,16 +1,19 @@
 package com.wuzeyu.config;
 
 import com.wuzeyu.types.annotations.DCCValue;
+import com.wuzeyu.types.common.Constants;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.redisson.api.RBucket;
+import org.redisson.api.RTopic;
 import org.redisson.api.RedissonClient;
 import org.springframework.aop.framework.AopProxyUtils;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
+import javax.swing.*;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,11 +37,51 @@ public class sDCCValueBeanFactory implements BeanPostProcessor {
         this.redissonClient = redissonClient;
     }
 
+    @Bean("dccObjGroup")
+    public RTopic dccRedisTopicListener(RedissonClient redissonClient) {
+        RTopic topic = redissonClient.getTopic("group_buy_market_dcc_");
+        topic.addListener(String.class, (charSequence, s) -> {
+            String[] split = s.split(Constants.SPLIT);
+
+            // 获取值
+            String key = BASE_CONFIG_PATH + split[0];
+            String value = split[1];
+
+            // 设置值
+            RBucket<String> bucket = redissonClient.getBucket(key);
+            if (! bucket.isExists()) {
+                return;
+            }
+            bucket.set(value);
+
+            Object objBean = dccObjGroup.get(key);
+            if (objBean == null) {
+                return;
+            }
+            Class<?> targetBeanClass = objBean.getClass();
+            // 检查是否为 AOP 代理对象
+            if (AopUtils.isAopProxy(objBean)) {
+                // 获取代理对象的目标类
+                targetBeanClass = AopUtils.getTargetClass(objBean);
+            }
+            try {
+                Field field = targetBeanClass.getDeclaredField(split[0]);
+                field.setAccessible(true);
+                field.set(objBean, value);
+                field.setAccessible(false);
+            } catch (NoSuchFieldException | IllegalAccessException e) {
+                log.error("Failed to update field {} in class {}", split[0], targetBeanClass.getName(), e);
+            }
+        });
+
+        return topic;
+    }
+
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         // 增加 AOP 代理后，获得类的方式要通过 AopProxyUtils.getTargetClass(bean); 不能直接 bean.class 因为代理后类的结构发生变化，这样不能获得到自己的自定义注解了。
-        Class<?> targetBeanClass = bean.getClass();
-        Object targetBeanObject = bean;
+        Class<?> targetBeanClass = bean.getClass();  // 用于反射操作
+        Object targetBeanObject = bean;  // 用于字段值设置，作为反射操作的目标对象
         if (AopUtils.isAopProxy(bean)) {  // 是 AOP 代理对象
             targetBeanClass = AopUtils.getTargetClass(bean);
             targetBeanObject = AopProxyUtils.getSingletonTarget(bean);
@@ -79,8 +122,12 @@ public class sDCCValueBeanFactory implements BeanPostProcessor {
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
+
+                dccObjGroup.put(key, targetBeanObject);
             }
         }
+
+                return bean;
     }
 
 }
