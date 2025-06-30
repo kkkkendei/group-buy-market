@@ -88,6 +88,7 @@ public class DCCValueBeanFactory implements BeanPostProcessor {
     }
 
     /**
+     * 扫描所有的Bean对象后，检查哪个类的属性有@DCCValue 注解
      * 订阅者初始化
      * 从 Redis 中读取配置值，不存在时设置默认值
      * 将对象和配置键的映射关系存储到 dccObjGroup 中，为后续动态更新做准备
