@@ -17,6 +17,11 @@
       <option name="url" value="http://maven.aliyun.com/nexus/content/groups/public/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="2452122-release-dbuebF" />
+      <option name="name" value="2452122-release-dbuebF" />
+      <option name="url" value="https://packages.aliyun.com/65b081d4076e069afe3d2f50/maven/2452122-release-dbuebf" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Maven Central repository" />
       <option name="url" value="https://repo1.maven.org/maven2" />
