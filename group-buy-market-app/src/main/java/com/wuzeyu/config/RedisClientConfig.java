@@ -9,6 +9,7 @@ import io.netty.buffer.ByteBufOutputStream;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.client.codec.BaseCodec;
+import org.redisson.client.codec.ByteArrayCodec;
 import org.redisson.client.protocol.Decoder;
 import org.redisson.client.protocol.Encoder;
 import org.redisson.codec.JsonJacksonCodec;
@@ -17,6 +18,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import java.io.IOException;
 
@@ -29,6 +31,7 @@ import java.io.IOException;
 @EnableConfigurationProperties(RedisClientConfigProperties.class)
 public class RedisClientConfig {
 
+    @Primary
     @Bean("redissonClient")
     public RedissonClient redissonClient(ConfigurableApplicationContext applicationContext, RedisClientConfigProperties properties) {
         Config config = new Config();
@@ -47,6 +50,27 @@ public class RedisClientConfig {
                 .setPingConnectionInterval(properties.getPingInterval())
                 .setKeepAlive(properties.isKeepAlive())
         ;
+
+        return Redisson.create(config);
+    }
+
+    @Bean("byteArrayRedissonClient")
+    public RedissonClient byteArrayRedissonClient(RedisClientConfigProperties properties) {
+        Config config = new Config();
+        // 使用 ByteArrayCodec 确保字节数组按原样存储
+        config.setCodec(new ByteArrayCodec());
+
+        config.useSingleServer()
+                .setAddress("redis://" + properties.getHost() + ":" + properties.getPort())
+                .setPassword(properties.getPassword())
+                .setConnectionPoolSize(properties.getPoolSize())
+                .setConnectionMinimumIdleSize(properties.getMinIdleSize())
+                .setIdleConnectionTimeout(properties.getIdleTimeout())
+                .setConnectTimeout(properties.getConnectTimeout())
+                .setRetryAttempts(properties.getRetryAttempts())
+                .setRetryInterval(properties.getRetryInterval())
+                .setPingConnectionInterval(properties.getPingInterval())
+                .setKeepAlive(properties.isKeepAlive());
 
         return Redisson.create(config);
     }

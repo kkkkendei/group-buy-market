@@ -9,6 +9,7 @@ import com.wuzeyu.infrastructure.dao.po.CrowdTags;
 import com.wuzeyu.infrastructure.dao.po.CrowdTagsDetail;
 import com.wuzeyu.infrastructure.dao.po.CrowdTagsJob;
 import com.wuzeyu.infrastructure.redis.IRedisService;
+import com.wuzeyu.infrastructure.redis.IRoaringBitmapService;
 import org.redisson.api.RBitSet;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Repository;
@@ -31,6 +32,9 @@ public class TagRepository implements ITagRepository {
 
     @Resource
     private ICrowdTagsJobDao crowdTagsJobDao;
+
+    @Resource
+    private IRoaringBitmapService roaringBitmapService;
 
     @Resource
     private IRedisService redisService;
@@ -62,9 +66,9 @@ public class TagRepository implements ITagRepository {
             crowdTagsDetailDao.addCrowdTagsUserId(crowdTagsDetailReq);
 
             // 获取BitSet
-
-            RBitSet bitSet = redisService.getBitSet(tagId);
-            bitSet.set(redisService.getIndexFromUserId(userId), true);
+            // RBitSet bitSet = redisService.getBitSet(tagId);
+            // bitSet.set(redisService.getIndexFromUserId(userId), true);
+            roaringBitmapService.addUserToCrowdTag(tagId, userId);
         } catch (DuplicateKeyException ignore) {
             // 忽略唯一索引冲突
         }
