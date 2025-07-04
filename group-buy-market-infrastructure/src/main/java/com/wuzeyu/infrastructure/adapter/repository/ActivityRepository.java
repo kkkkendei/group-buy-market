@@ -7,7 +7,9 @@ import com.wuzeyu.infrastructure.dao.*;
 import com.wuzeyu.infrastructure.dao.po.*;
 import com.wuzeyu.infrastructure.dcc.DCCService;
 import com.wuzeyu.infrastructure.redis.IRedisService;
+import com.wuzeyu.infrastructure.redis.IRoaringBitmapService;
 import org.redisson.api.RBitSet;
+import org.roaringbitmap.RoaringBitmap;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
@@ -43,6 +45,9 @@ public class ActivityRepository implements IActivityRepository {
 
     @Resource
     private IRedisService redisService;
+
+    @Resource
+    private IRoaringBitmapService roaringBitmapService;
 
     @Resource
     private DCCService dccService;
@@ -117,11 +122,12 @@ public class ActivityRepository implements IActivityRepository {
 
     @Override
     public boolean isTagCrowdRange(String tagId, String userId) {
-        RBitSet bitSet = redisService.getBitSet(tagId);
+        // RBitSet bitSet = redisService.getBitSet(tagId);
+        RoaringBitmap roaringBitmap = roaringBitmapService.getRoaringBitmap(tagId);
         // 如果人群标签数据丢失，默认允许所有用户访问
-        if (!bitSet.isExists()) return true;
+        if (roaringBitmap.isEmpty()) return true;
         // 判断用户是否存在人群中
-        return bitSet.get(redisService.getIndexFromUserId(userId));
+        return roaringBitmap.contains(redisService.getIndexFromUserId(userId));
     }
 
     @Override

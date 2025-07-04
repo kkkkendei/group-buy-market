@@ -76,9 +76,9 @@ public class RoaringBitmapService implements IRoaringBitmapService {
     @Override
     public RoaringBitmap getRoaringBitmap(String key) {
         if (! redissonClient.getBucket(key).isExists()) {
-            log.info("key不存在");
             return new RoaringBitmap();
         }
+
         RBucket<byte[]> bucket = redissonClient.getBucket(key);
         byte[] data = bucket.get();
         if (data == null) {

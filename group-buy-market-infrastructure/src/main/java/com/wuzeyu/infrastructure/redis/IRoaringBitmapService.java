@@ -49,6 +49,11 @@ public interface IRoaringBitmapService {
      */
     Set<String> getTagUnion(String tagId1, String tagId2);
 
+    /**
+     * 获取 RoaringBitmap
+     *
+     * @param key Redis 中的键
+     */
     RoaringBitmap getRoaringBitmap(String key);
 
 }
