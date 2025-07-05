@@ -24,7 +24,7 @@ public class DCCController implements IDCCService {
     private RTopic dccTopic;
 
     /**
-     * 动态值变更
+     * 动态值变更，即发布
      * <p>
      * curl http://localhost:8091/api/v1/gbm/dcc/update_config?key=downgradeSwitch&value=1
      * curl http://localhost:8091/api/v1/gbm/dcc/update_config?key=cutRange&value=0

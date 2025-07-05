@@ -1,5 +1,6 @@
 package com.wuzeyu.config;
 
+import com.wuzeyu.config.policy.MyRejectedPolicy;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -32,6 +33,9 @@ public class ThreadPoolConfig {
                 break;
             case "CallerRunsPolicy":
                 handler = new ThreadPoolExecutor.CallerRunsPolicy();
+                break;
+            case "MyRejectedPolicy":
+                handler = new MyRejectedPolicy();
                 break;
             default:
                 handler = new ThreadPoolExecutor.AbortPolicy();
