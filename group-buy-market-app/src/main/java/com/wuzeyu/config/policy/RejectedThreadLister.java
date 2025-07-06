@@ -4,12 +4,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.annotation.Order;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
-
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.*;
 
 /**
  * @author wuzeyu
@@ -40,7 +37,7 @@ public class RejectedThreadLister {
                 // 阻塞队列
                 ArrayBlockingQueue<Runnable> queue = (ArrayBlockingQueue<Runnable>) executor.getQueue();
                 // 从缓存中获取被拒绝的任务
-                String taskJson = stringRedisTemplate.opsForList().leftPop(REJECTED_TASK_KEY_PREFIX);
+                String taskJson= stringRedisTemplate.opsForList().leftPop(REJECTED_TASK_KEY_PREFIX);
                 if (taskJson != null) {
                     count = 0;
                     // 反序列化任务
@@ -49,7 +46,7 @@ public class RejectedThreadLister {
                         executor.submit(task);
                     } else {
                         try {
-                            queue.put((Runnable) task);
+                            queue.put(new FutureTask<>(task));
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
