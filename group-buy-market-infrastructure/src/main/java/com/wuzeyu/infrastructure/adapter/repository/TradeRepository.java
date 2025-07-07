@@ -24,6 +24,9 @@ import com.wuzeyu.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.redisson.Redisson;
+import org.redisson.api.RLock;
+import org.redisson.api.RedissonClient;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -54,6 +57,9 @@ public class TradeRepository implements ITradeRepository {
     @Resource
     private DCCService dccService;
 
+    @Resource
+    private RedissonClient redissonClient;
+
     @Override
     public MarketPayOrderEntity queryMarketPayOrderEntityByOutTradeNo(String userId, String outTradeNo) {
         GroupBuyOrderList groupBuyOrderListReq = new GroupBuyOrderList();
@@ -80,6 +86,22 @@ public class TradeRepository implements ITradeRepository {
         PayActivityEntity payActivityEntity = groupBuyOrderAggregate.getPayActivityEntity();
         PayDiscountEntity payDiscountEntity = groupBuyOrderAggregate.getPayDiscountEntity();
         Integer userTakeOrderCount = groupBuyOrderAggregate.getUserTakeOrderCount();
+
+        // 构建幂等锁的key
+        String lockKey = "group_buy:lock:" + payActivityEntity.getActivityId() +
+                ":" + userEntity.getUserId() +
+                ":" + (userTakeOrderCount + 1);
+
+        // 获取分布式锁
+        RLock lock = redissonClient.getLock(lockKey);
+        try {
+            // 原有业务逻辑
+
+        } finally {
+            if (lock.isHeldByCurrentThread()) {
+                lock.unlock();
+            }
+        }
 
         // 判断是否有团 - teamId 为空 - 新团、为不空 - 老团
         String teamId = payActivityEntity.getTeamId();
