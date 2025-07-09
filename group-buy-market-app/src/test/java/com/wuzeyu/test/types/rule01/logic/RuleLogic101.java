@@ -17,7 +17,7 @@ public class RuleLogic101 extends AbstractLogicLink<String, Rule01TradeRuleFacto
     @Override
     public String apply(String requestParameter, Rule01TradeRuleFactory.DynamicContext dynamicContext) throws Exception {
         log.info("link1");
-        return "link1";
+        return next(requestParameter, dynamicContext);
     }
 
 }
