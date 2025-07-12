@@ -87,7 +87,7 @@ public class TradeRepository implements ITradeRepository {
         PayDiscountEntity payDiscountEntity = groupBuyOrderAggregate.getPayDiscountEntity();
         Integer userTakeOrderCount = groupBuyOrderAggregate.getUserTakeOrderCount();
 
-        // 构建幂等锁的key
+        /*// 构建幂等锁的key
         String lockKey = "group_buy:lock:" + payActivityEntity.getActivityId() +
                 ":" + userEntity.getUserId() +
                 ":" + (userTakeOrderCount + 1);
@@ -102,7 +102,7 @@ public class TradeRepository implements ITradeRepository {
                 lock.unlock();
             }
         }
-
+*/
         // 判断是否有团 - teamId 为空 - 新团、为不空 - 老团
         String teamId = payActivityEntity.getTeamId();
         if (StringUtils.isBlank(teamId)) {

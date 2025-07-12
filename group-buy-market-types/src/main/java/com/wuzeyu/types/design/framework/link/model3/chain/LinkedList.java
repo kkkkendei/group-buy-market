@@ -24,6 +24,7 @@ public class LinkedList<E> implements ILink<E> {
     void LinkFirst(E e) {
         final Node<E> f = first;
         final Node<E> newNode = new Node<E>(null, e, f);
+        first = newNode;
         if (f == null) {
             last = newNode;
         } else {
@@ -35,6 +36,7 @@ public class LinkedList<E> implements ILink<E> {
     void LinkLast(E e) {
         final Node<E> l = last;
         final Node<E> newNode = new Node<E>(l, e, null);
+        last = newNode;
         if (l == null) {
             first = newNode;
         } else {

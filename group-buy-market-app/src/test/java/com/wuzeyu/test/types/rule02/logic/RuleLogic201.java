@@ -17,7 +17,7 @@ public class RuleLogic201 implements ILogicHandler<String, Rule02Factory.Dynamic
     @Override
     public String apply(String requestParameter, Rule02Factory.DynamicContext dynamicContext) throws Exception {
         log.info("link201");
-        return next(requestParameter, dynamicContext);
+        return null;
     }
 
 }
