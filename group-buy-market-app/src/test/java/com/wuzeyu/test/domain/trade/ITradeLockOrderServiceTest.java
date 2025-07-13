@@ -11,6 +11,7 @@ import com.wuzeyu.domain.trade.model.entity.PayDiscountEntity;
 import com.wuzeyu.domain.trade.model.entity.UserEntity;
 import com.wuzeyu.domain.trade.service.ITradeLockOrderService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -38,11 +39,11 @@ public class ITradeLockOrderServiceTest {
     public void test_lockMarketPayOrder() throws Exception {
         // 入参信息
         Long activityId = 100123L;
-        String userId = "xfg07";
+        String userId = "test_wzy";
         String goodsId = "9890001";
         String source = "s01";
         String channel = "c01";
-        String outTradeNo = "909000098111";
+        String outTradeNo = RandomStringUtils.randomNumeric(12);
 
         // 1. 获取试算优惠，有【activityId】优先使用
         TrialBalanceEntity trialBalanceEntity = indexGroupBuyMarketService.indexMarketTrial(MarketProductEntity.builder()
@@ -71,6 +72,7 @@ public class ITradeLockOrderServiceTest {
                         .activityName(groupBuyActivityDiscountVO.getActivityName())
                         .startTime(groupBuyActivityDiscountVO.getStartTime())
                         .endTime(groupBuyActivityDiscountVO.getEndTime())
+                        .validTime(1000)
                         .targetCount(groupBuyActivityDiscountVO.getTarget())
                         .build(),
                 PayDiscountEntity.builder()
@@ -80,6 +82,7 @@ public class ITradeLockOrderServiceTest {
                         .goodsName(trialBalanceEntity.getGoodsName())
                         .originalPrice(trialBalanceEntity.getOriginalPrice())
                         .deductionPrice(trialBalanceEntity.getDeductionPrice())
+                        .payPrice(trialBalanceEntity.getPayPrice())
                         .outTradeNo(outTradeNo)
                         .build());
 

@@ -1,0 +1,179 @@
+25-07-09.20:43:19.971 [main            ] INFO  Rule02Test             - Starting Rule02Test using Java 1.8.0_341 on wzy with PID 31104 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-07-09.20:43:19.972 [main            ] INFO  Rule02Test             - The following 1 profile is active: "dev"
+25-07-09.20:43:21.385 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-07-09.20:43:21.390 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-07-09.20:43:21.478 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 0 Redis repository interfaces.
+25-07-09.20:43:21.942 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.wuzeyu.config.RedisClientConfig$$EnhancerBySpringCGLIB$$5cca4080] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:43:22.529 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.wuzeyu.config.RedisClientConfigProperties' of type [com.wuzeyu.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:43:22.925 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.20:43:23.786 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:43:23.928 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:43:24.006 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:43:25.674 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.20:43:25.741 [redisson-netty-5-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:43:25.869 [redisson-netty-5-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:43:28.243 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-07-09.20:43:28.341 [main            ] INFO  Rule02Test             - Started Rule02Test in 8.942 seconds (JVM running for 10.501)
+25-07-09.20:43:28.683 [main            ] INFO  RuleLogic202           - link202
+25-07-09.20:43:28.861 [main            ] INFO  Rule02Test             - 测试结果:"link202"
+25-07-09.20:44:42.630 [main            ] INFO  Rule02Test             - Starting Rule02Test using Java 1.8.0_341 on wzy with PID 8180 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-07-09.20:44:42.632 [main            ] INFO  Rule02Test             - The following 1 profile is active: "dev"
+25-07-09.20:44:43.857 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-07-09.20:44:43.860 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-07-09.20:44:43.940 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 0 Redis repository interfaces.
+25-07-09.20:44:44.454 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.wuzeyu.config.RedisClientConfig$$EnhancerBySpringCGLIB$$b17d18a0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:44:44.946 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.wuzeyu.config.RedisClientConfigProperties' of type [com.wuzeyu.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:44:45.338 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.20:44:46.112 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:44:46.228 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:44:46.296 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:44:47.582 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.20:44:47.643 [redisson-netty-5-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:44:47.773 [redisson-netty-5-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:44:50.149 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-07-09.20:44:50.247 [main            ] INFO  Rule02Test             - Started Rule02Test in 8.254 seconds (JVM running for 9.41)
+25-07-09.20:44:50.554 [main            ] INFO  RuleLogic202           - link202
+25-07-09.20:44:50.725 [main            ] INFO  Rule02Test             - 测试结果:"link202"
+25-07-09.20:45:06.204 [main            ] INFO  Rule02Test             - Starting Rule02Test using Java 1.8.0_341 on wzy with PID 32696 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-07-09.20:45:06.205 [main            ] INFO  Rule02Test             - The following 1 profile is active: "dev"
+25-07-09.20:45:07.468 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-07-09.20:45:07.472 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-07-09.20:45:07.552 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64 ms. Found 0 Redis repository interfaces.
+25-07-09.20:45:08.059 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.wuzeyu.config.RedisClientConfig$$EnhancerBySpringCGLIB$$75bcae15] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:45:08.536 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.wuzeyu.config.RedisClientConfigProperties' of type [com.wuzeyu.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:45:08.911 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.20:45:09.709 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:45:09.836 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:45:09.906 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:45:11.255 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.20:45:11.317 [redisson-netty-5-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:45:11.443 [redisson-netty-5-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:45:14.012 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-07-09.20:45:14.109 [main            ] INFO  Rule02Test             - Started Rule02Test in 8.558 seconds (JVM running for 9.825)
+25-07-09.20:45:14.409 [main            ] INFO  RuleLogic202           - link202
+25-07-09.20:45:14.571 [main            ] INFO  Rule02Test             - 测试结果:"link202"
+25-07-09.20:47:19.386 [main            ] INFO  Rule02Test             - Starting Rule02Test using Java 1.8.0_341 on wzy with PID 24492 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-07-09.20:47:19.388 [main            ] INFO  Rule02Test             - The following 1 profile is active: "dev"
+25-07-09.20:47:20.626 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-07-09.20:47:20.630 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-07-09.20:47:20.709 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 0 Redis repository interfaces.
+25-07-09.20:47:21.240 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.wuzeyu.config.RedisClientConfig$$EnhancerBySpringCGLIB$$75bcae15] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:47:21.752 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.wuzeyu.config.RedisClientConfigProperties' of type [com.wuzeyu.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:47:22.149 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.20:47:22.935 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:47:23.058 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:47:23.126 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:47:24.438 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.20:47:24.504 [redisson-netty-5-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:47:24.633 [redisson-netty-5-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:47:26.980 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-07-09.20:47:27.063 [main            ] INFO  Rule02Test             - Started Rule02Test in 8.306 seconds (JVM running for 9.469)
+25-07-09.20:47:27.348 [main            ] INFO  RuleLogic202           - link202
+25-07-09.20:47:27.511 [main            ] INFO  Rule02Test             - 测试结果:"link202"
+25-07-09.20:48:13.896 [main            ] INFO  Rule02Test             - Starting Rule02Test using Java 1.8.0_341 on wzy with PID 28572 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-07-09.20:48:13.898 [main            ] INFO  Rule02Test             - The following 1 profile is active: "dev"
+25-07-09.20:48:15.122 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-07-09.20:48:15.126 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-07-09.20:48:15.206 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 0 Redis repository interfaces.
+25-07-09.20:48:15.749 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.wuzeyu.config.RedisClientConfig$$EnhancerBySpringCGLIB$$8145a09a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:48:16.242 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.wuzeyu.config.RedisClientConfigProperties' of type [com.wuzeyu.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:48:16.607 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.20:48:17.394 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:48:17.509 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:48:17.584 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:48:18.905 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.20:48:18.968 [redisson-netty-5-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:48:19.084 [redisson-netty-5-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:48:21.398 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-07-09.20:48:21.485 [main            ] INFO  Rule02Test             - Started Rule02Test in 8.232 seconds (JVM running for 9.468)
+25-07-09.20:48:21.779 [main            ] INFO  RuleLogic202           - link202
+25-07-09.20:48:21.960 [main            ] INFO  Rule02Test             - 测试结果:"link202"
+25-07-09.20:54:00.270 [main            ] INFO  Rule02Test             - Starting Rule02Test using Java 1.8.0_341 on wzy with PID 27428 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-07-09.20:54:00.270 [main            ] INFO  Rule02Test             - The following 1 profile is active: "dev"
+25-07-09.20:54:01.652 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-07-09.20:54:01.658 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-07-09.20:54:01.737 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 0 Redis repository interfaces.
+25-07-09.20:54:02.306 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.wuzeyu.config.RedisClientConfig$$EnhancerBySpringCGLIB$$3603b04b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:54:02.881 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.wuzeyu.config.RedisClientConfigProperties' of type [com.wuzeyu.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:54:03.850 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.20:54:04.832 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:54:04.997 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:54:05.079 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:54:06.970 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.20:54:07.031 [redisson-netty-5-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:54:07.167 [redisson-netty-5-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:54:10.116 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-07-09.20:54:10.216 [main            ] INFO  Rule02Test             - Started Rule02Test in 10.619 seconds (JVM running for 12.532)
+25-07-09.20:54:48.887 [main            ] INFO  RuleLogic202           - link202
+25-07-09.20:55:15.799 [main            ] INFO  Rule02Test             - 测试结果:"link202"
+25-07-09.20:55:22.250 [main            ] INFO  Rule02Test             - Starting Rule02Test using Java 1.8.0_341 on wzy with PID 3972 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-07-09.20:55:22.251 [main            ] INFO  Rule02Test             - The following 1 profile is active: "dev"
+25-07-09.20:55:23.697 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-07-09.20:55:23.703 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-07-09.20:55:23.798 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 76 ms. Found 0 Redis repository interfaces.
+25-07-09.20:55:24.395 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.wuzeyu.config.RedisClientConfig$$EnhancerBySpringCGLIB$$923a55a4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:55:24.966 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.wuzeyu.config.RedisClientConfigProperties' of type [com.wuzeyu.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:55:26.013 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.20:55:26.967 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:55:27.090 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:55:27.168 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.20:55:28.961 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.20:55:29.027 [redisson-netty-5-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:55:29.146 [redisson-netty-5-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.20:55:32.123 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-07-09.20:55:32.225 [main            ] INFO  Rule02Test             - Started Rule02Test in 10.688 seconds (JVM running for 12.346)
+25-07-09.20:56:08.490 [main            ] INFO  RuleLogic202           - link202
+25-07-09.21:00:06.667 [main            ] INFO  Rule02Test             - Starting Rule02Test using Java 1.8.0_341 on wzy with PID 24944 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-07-09.21:00:06.667 [main            ] INFO  Rule02Test             - The following 1 profile is active: "dev"
+25-07-09.21:00:08.000 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-07-09.21:00:08.006 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-07-09.21:00:08.086 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64 ms. Found 0 Redis repository interfaces.
+25-07-09.21:00:08.618 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.wuzeyu.config.RedisClientConfig$$EnhancerBySpringCGLIB$$923a55a4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.21:00:09.165 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.wuzeyu.config.RedisClientConfigProperties' of type [com.wuzeyu.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.21:00:10.133 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.21:00:11.120 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.21:00:11.244 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.21:00:11.321 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.21:00:13.159 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.21:00:13.234 [redisson-netty-5-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.21:00:13.347 [redisson-netty-5-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.21:03:32.456 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-07-09.21:03:32.551 [main            ] INFO  Rule02Test             - Started Rule02Test in 206.533 seconds (JVM running for 208.191)
+25-07-09.21:08:14.060 [main            ] INFO  Rule02Test             - Starting Rule02Test using Java 1.8.0_341 on wzy with PID 32476 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-07-09.21:08:14.062 [main            ] INFO  Rule02Test             - The following 1 profile is active: "dev"
+25-07-09.21:08:15.212 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-07-09.21:08:15.216 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-07-09.21:08:15.297 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 0 Redis repository interfaces.
+25-07-09.21:08:15.759 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.wuzeyu.config.RedisClientConfig$$EnhancerBySpringCGLIB$$8de50688] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.21:08:16.228 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.wuzeyu.config.RedisClientConfigProperties' of type [com.wuzeyu.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.21:08:16.592 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.21:08:17.404 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.21:08:17.522 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.21:08:17.586 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.21:08:18.855 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.21:08:18.911 [redisson-netty-5-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.21:08:19.064 [redisson-netty-5-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.21:08:21.183 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-07-09.21:08:21.268 [main            ] INFO  Rule02Test             - Started Rule02Test in 7.829 seconds (JVM running for 8.977)
+25-07-09.21:08:21.545 [main            ] INFO  RuleLogic201           - link201
+25-07-09.21:08:21.545 [main            ] INFO  RuleLogic202           - link202
+25-07-09.21:08:21.703 [main            ] INFO  Rule02Test             - 测试结果:"link202"
+25-07-09.21:08:42.790 [main            ] INFO  Rule02Test             - Starting Rule02Test using Java 1.8.0_341 on wzy with PID 25712 (started by 吴泽宇 in C:\Users\吴泽宇\group-buy-market\group-buy-market-app)
+25-07-09.21:08:42.791 [main            ] INFO  Rule02Test             - The following 1 profile is active: "dev"
+25-07-09.21:08:44.025 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-07-09.21:08:44.029 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-07-09.21:08:44.111 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 67 ms. Found 0 Redis repository interfaces.
+25-07-09.21:08:44.629 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.wuzeyu.config.RedisClientConfig$$EnhancerBySpringCGLIB$$8de50688] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.21:08:45.116 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.wuzeyu.config.RedisClientConfigProperties' of type [com.wuzeyu.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.21:08:45.476 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.21:08:46.251 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.21:08:46.383 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.21:08:46.449 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-07-09.21:08:47.733 [main            ] INFO  Version                - Redisson 3.26.0
+25-07-09.21:08:47.796 [redisson-netty-5-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.21:08:47.914 [redisson-netty-5-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.122.26.159/47.122.26.159:6379
+25-07-09.21:08:50.258 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-07-09.21:08:50.346 [main            ] INFO  Rule02Test             - Started Rule02Test in 8.176 seconds (JVM running for 9.295)
+25-07-09.21:08:50.618 [main            ] INFO  RuleLogic201           - link201
+25-07-09.21:08:50.618 [main            ] INFO  RuleLogic202           - link202
+25-07-09.21:08:50.786 [main            ] INFO  Rule02Test             - 测试结果:"link202"

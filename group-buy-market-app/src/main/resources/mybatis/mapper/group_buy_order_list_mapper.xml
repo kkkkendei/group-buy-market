@@ -27,12 +27,12 @@
         insert into group_buy_order_list(
         user_id, team_id, order_id, activity_id, start_time,
         end_time, goods_id, source, channel, original_price,
-        deduction_price, status, out_trade_no, biz_id, create_time, update_time
+        deduction_price, status, out_trade_no, out_trade_time, biz_id, create_time, update_time
         )
         values(
         #{userId}, #{teamId}, #{orderId}, #{activityId}, #{startTime},
         #{endTime}, #{goodsId}, #{source}, #{channel}, #{originalPrice},
-        #{deductionPrice}, #{status}, #{outTradeNo}, #{bizId}, now(), now()
+        #{deductionPrice}, #{status}, #{outTradeNo}, #{outTradeTime}, #{bizId}, now(), now()
         )
     </insert>
 

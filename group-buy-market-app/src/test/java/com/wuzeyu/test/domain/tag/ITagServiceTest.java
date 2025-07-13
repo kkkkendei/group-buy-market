@@ -42,7 +42,7 @@ public class ITagServiceTest {
         RBitSet bitSet = redisService.getBitSet("RQ_KJHKL98UU78H66554GFDV");
         // 是否存在
         log.info("w 存在，预期结果为 true，测试结果:{}", bitSet.get(redisService.getIndexFromUserId("test_wzy_1")));
-        log.info("gudebai 不存在，预期结果为 false，测试结果:{}", bitSet.get(redisService.getIndexFromUserId("gudebai")));
+        log.info("bitch 不存在，预期结果为 false，测试结果:{}", bitSet.get(redisService.getIndexFromUserId("bitch")));
     }
 
     @Test
@@ -50,7 +50,7 @@ public class ITagServiceTest {
         RoaringBitmap bitSet = roaringBitmapService.getRoaringBitmap("roaring_tag_RQ_KJHKL98UU78H66554GFDV");
         // 是否存在
         log.info("w 存在，预期结果为 true，测试结果:{}", bitSet.contains(redisService.getIndexFromUserId("test_wzy_1")));
-        log.info("gudebai 不存在，预期结果为 false，测试结果:{}", bitSet.contains(redisService.getIndexFromUserId("gudebai")));
+        log.info("bitch 不存在，预期结果为 false，测试结果:{}", bitSet.contains(redisService.getIndexFromUserId("bitch")));
     }
 
     @Test
