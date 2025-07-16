@@ -17,5 +17,4 @@ public class OKHttpClientConfig {
         return new OkHttpClient();
     }
 
-
 }

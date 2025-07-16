@@ -29,7 +29,7 @@ public class RejectedThreadLister {
     // 最大循环次数
     private int maxNumber = 20;
 
-    @PostConstruct
+    // @PostConstruct
     public void rejectedThreadLister() {
         new Thread(() -> {
             int count = 0;

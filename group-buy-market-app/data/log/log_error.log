@@ -1,2 +1,1 @@
-25-07-14.16:34:31.918 [main            ] ERROR SettableRuleFilter     - 订单交易时间不在拼团有效时间范围内
-25-07-14.16:37:22.618 [main            ] ERROR SettableRuleFilter     - 订单交易时间不在拼团有效时间范围内
+25-07-15.17:05:49.700 [main            ] ERROR OutTradeNoRuleFilter   - 不存在的外部交易单号或用户已退单，不需要做支付订单结算:test_zyt_1 outTradeNo:WEXP40gCv0eo

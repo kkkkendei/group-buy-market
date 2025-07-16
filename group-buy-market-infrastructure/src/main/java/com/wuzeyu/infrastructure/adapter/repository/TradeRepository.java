@@ -267,8 +267,8 @@ public class TradeRepository implements ITradeRepository {
             notifyTask.setActivityId(groupBuyTeamEntity.getActivityId());
             notifyTask.setTeamId(groupBuyTeamEntity.getTeamId());
             notifyTask.setNotifyUrl(groupBuyTeamEntity.getNotifyUrl());
-            notifyTask.setNotifyCount(1);
-            notifyTask.setNotifyStatus(1);
+            notifyTask.setNotifyCount(0);
+            notifyTask.setNotifyStatus(0);
 
             notifyTask.setParameterJson(JSON.toJSONString(new HashMap<String, Object>() {{
                 put("teamId", groupBuyTeamEntity.getTeamId());
