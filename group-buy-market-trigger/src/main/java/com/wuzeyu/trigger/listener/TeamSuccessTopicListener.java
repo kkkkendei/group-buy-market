@@ -21,7 +21,8 @@ public class TeamSuccessTopicListener {
             value = @Queue(value = "${spring.rabbitmq.config.producer.topic_team_success.queue}"),
             exchange = @Exchange(value = "${spring.rabbitmq.config.producer.exchange}", type = ExchangeTypes.TOPIC),
             key = "${spring.rabbitmq.config.producer.topic_team_success.routing_key}"
-    ))
+        )
+    )
     public void listener(String message) {
         log.info("接受消息: {}", message);
     }
