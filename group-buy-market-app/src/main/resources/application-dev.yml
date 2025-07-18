@@ -29,7 +29,28 @@ spring:
     connection-timeout: 30000 #数据库连接超时时间,默认30秒，即30000
     connection-test-query: SELECT 1
   type: com.zaxxer.hikari.HikariDataSource
-
+  rabbitmq:
+    addresses: 47.122.26.159
+    port: 5672
+    username: admin
+    password: admin
+    listener:
+      simple:
+        prefetch: 1 # 每次投递n个消息，消费完在投递n个
+    template:
+      delivery-mode: persistent # 确保全局默认设置为持久化（可选）
+    # 消息配置
+    config:
+      # 生产者
+      producer:
+        # 绑定交换机，统一一套交换机
+        exchange: group_buy_market_exchange
+        # 消息主题配置；路由key、队列
+        topic_team_success:
+          # 消息主题
+          routing_key: topic.team_success
+          # 消费队列
+          queue: group_buy_market_queue_2_topic_team_success
 
 redis:
   sdk:
