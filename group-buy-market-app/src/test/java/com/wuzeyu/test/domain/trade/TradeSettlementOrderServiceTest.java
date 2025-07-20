@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * @author wuzeyu
@@ -37,6 +38,9 @@ public class TradeSettlementOrderServiceTest {
         TradePaySettlementEntity tradePaySettlementEntity = tradeSettlementOrderService.settlementMarketPayOrder(tradePaySuccessEntity);
         log.info("请求参数:{}", JSON.toJSONString(tradePaySuccessEntity));
         log.info("测试结果:{}", JSON.toJSONString(tradePaySettlementEntity));
+
+        // 暂停等待 MQ 消息，处理完后，手动关闭程序
+        new CountDownLatch(1).await();
     }
 
 }
