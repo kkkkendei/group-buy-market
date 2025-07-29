@@ -16,6 +16,7 @@ import com.wuzeyu.infrastructure.dao.po.GroupBuyOrder;
 import com.wuzeyu.infrastructure.dao.po.GroupBuyOrderList;
 import com.wuzeyu.infrastructure.dao.po.NotifyTask;
 import com.wuzeyu.infrastructure.dcc.DCCService;
+import com.wuzeyu.infrastructure.redis.RedissonService;
 import com.wuzeyu.types.common.Constants;
 import com.wuzeyu.types.enums.ActivityStatusEnumVO;
 import com.wuzeyu.types.enums.GroupBuyOrderEnumVO;
@@ -58,7 +59,7 @@ public class TradeRepository implements ITradeRepository {
     private DCCService dccService;
 
     @Resource
-    private RedissonClient redissonClient;
+    private RedissonService redissonService;
 
     @Override
     public MarketPayOrderEntity queryMarketPayOrderEntityByOutTradeNo(String userId, String outTradeNo) {
@@ -209,6 +210,11 @@ public class TradeRepository implements ITradeRepository {
         groupBuyOrderListReq.setActivityId(activityId);
         groupBuyOrderListReq.setUserId(userId);
         return groupBuyOrderListDao.queryOrderCountByActivityId(groupBuyOrderListReq);
+    }
+
+    @Override
+    public Boolean OccupyTeamStock(String teamStockKey, String recoveryTeamStockKey, Integer target, Integer validTime) {
+        return null;
     }
 
     @Override

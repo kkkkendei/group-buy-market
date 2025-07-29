@@ -55,6 +55,16 @@ public interface ITradeRepository {
     Integer queryOrderCountByActivityId(Long activityId, String userId);
 
     /**
+     * 占用团队库存
+     * @param teamStockKey 团队库存键
+     * @param recoveryTeamStockKey 恢复团队库存键
+     * @param target 目标数量
+     * @param validTime 有效时间（秒）
+     * @return 是否成功占用库存
+     */
+    Boolean OccupyTeamStock(String teamStockKey, String recoveryTeamStockKey, Integer target, Integer validTime);
+
+    /**
      * 根据团队ID查询拼团团队实体
      * @param teamId 团队ID
      * @return 拼团团队实体
