@@ -26,7 +26,7 @@ import java.util.concurrent.*;
  * @github github.com/kkkkendei
  */
 @Slf4j
-@Service
+// @Service
 public class MarketNode extends AbstractGroupBuyMarketSupport<MarketProductEntity, DefaultActivityStrategyFactory.DynamicContext, TrialBalanceEntity> {
 
     @Resource
