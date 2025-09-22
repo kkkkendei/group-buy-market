@@ -4,7 +4,7 @@ import com.wuzeyu.api.response.Response;
 
 /**
  * @author wuzeyu
- * @description DCC动态配置中心
+ * @description DCC 动态配置中心
  * @github github.com/kkkkendei
  */
 public interface IDCCService {
